@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
-class DetailsScreen extends StatelessWidget {
-  const DetailsScreen({super.key});
+import '../constants.dart';
 
+class DetailsScreen extends StatelessWidget {
+  DetailsScreen({super.key});
+  bool fabHovered = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -12,13 +14,14 @@ class DetailsScreen extends StatelessWidget {
       // ),
       body: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
               width: MediaQuery.of(context).size.width,
               // height: MediaQuery.of(context).size.height /
               //     1.8, // Half of the screen height
               decoration: BoxDecoration(
-                color: Colors.blue,
+                color: kSecondColor,
                 borderRadius: BorderRadius.only(
                   bottomLeft:
                       Radius.circular(50.0), // Rounded bottom left corner
@@ -45,10 +48,65 @@ class DetailsScreen extends StatelessWidget {
                                     40.0), // Rounded top right corner
                               ),
                             ),
-                            child: Center(
-                              child: Text(
-                                'Bottom Rounded Container',
-                                style: TextStyle(fontSize: 16.0),
+                            child: Padding(
+                              padding: EdgeInsets.only(
+                                  top: MediaQuery.of(context).size.height / 10,
+                                  left:
+                                      MediaQuery.of(context).size.height / 7.2,
+                                  right:
+                                      MediaQuery.of(context).size.width * 0.07),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'Diane Lindsey Reeves, Lindsey Clasen, Nancy Bond',
+                                    textAlign: TextAlign.start,
+                                    style: TextStyle(
+                                        fontSize: 11,
+                                        color: Color.fromARGB(255, 37, 121, 39),
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Text(
+                                    'Career Ideas for Kids Who Like Adventure and Travel',
+                                    textAlign: TextAlign.start,
+                                    style: TextStyle(
+                                        fontSize: 18,
+                                        color: kSecondColor,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Container(
+                                    width: 110,
+                                    height: 35, // Set your desired height
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(
+                                          20), // Adjust the radius as needed
+                                      gradient: LinearGradient(
+                                        // begin: Alignment.l,
+
+                                        colors: [
+                                          Color.fromRGBO(255, 242, 215, 1),
+                                          Color.fromRGBO(255, 235, 187, 1)
+                                        ], // Replace with your desired colors
+                                      ),
+                                    ),
+                                    child: Center(
+                                      child: Text(
+                                        "Pages: 203",
+                                        style: TextStyle(
+                                          fontSize: 14,
+                                          color: Color.fromRGBO(35, 28, 7, 1),
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
                           ),
@@ -65,9 +123,8 @@ class DetailsScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(6),
                           ),
                           child: SizedBox(
-                             width: 130,
-                            height:MediaQuery.of(context).size.width *
-                            0.565,
+                            width: 130,
+                            height: MediaQuery.of(context).size.width * 0.565,
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(6),
                               child: Image.network(
@@ -109,7 +166,84 @@ class DetailsScreen extends StatelessWidget {
                 ],
               ),
             ),
+            SizedBox(
+              height: 30,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 30.0),
+              child: Text(
+                "Similar Books",
+                style: TextStyle(color: kSecondColor, fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+            )
           ],
+        ),
+      ),
+      floatingActionButton: AnimatedContainer(
+        duration: Duration(milliseconds: 300),
+        // padding: EdgeInsets.only(right: 20),
+        margin: EdgeInsets.only(
+          right: fabHovered ? 16.0 : 0.0, // Adjust the margin as needed
+        ),
+        child: FloatingActionButton(
+          elevation: 5,
+          backgroundColor: kSecondColor,
+          onPressed: () {
+            // Handle FAB tap
+          },
+          child: Icon(Icons.file_download),
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
+      bottomNavigationBar: BottomAppBar(
+        color: Color(0xFFb3f1c8),
+        // shape: CircularNotchedRectangle(),
+        notchMargin: 10,
+        child: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Row(
+            // mainAxisSize: MainAxisSize.max,
+            // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              SizedBox(
+                width: 20,
+              ),
+              Text(
+                "Download this book",
+                style:
+                    TextStyle(color: kSecondColor, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              Container(
+                width: 70,
+                height: 35, // Set your desired height
+                decoration: BoxDecoration(
+                  borderRadius:
+                      BorderRadius.circular(20), // Adjust the radius as needed
+                  gradient: LinearGradient(
+                    // begin: Alignment.l,
+
+                    colors: [
+                      Color.fromRGBO(255, 242, 215, 1),
+                      Color.fromRGBO(255, 235, 187, 1)
+                    ], // Replace with your desired colors
+                  ),
+                ),
+                child: Center(
+                  child: Text(
+                    "PDF",
+                    style: TextStyle(
+                      fontSize: 14,
+                      color: Color.fromRGBO(35, 28, 7, 1),
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

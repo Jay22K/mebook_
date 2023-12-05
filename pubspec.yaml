@@ -41,6 +41,7 @@ dependencies:
   floating_navbar: ^2.0.2
   dot_navigation_bar: ^1.0.2
   shimmer: ^3.0.0
+  google_nav_bar: ^5.0.2
 
 
 

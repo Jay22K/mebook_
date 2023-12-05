@@ -4,6 +4,7 @@ import 'package:dot_navigation_bar/dot_navigation_bar.dart';
 import 'package:floating_navbar/floating_navbar.dart';
 import 'package:floating_navbar/floating_navbar_item.dart';
 import 'package:flutter/material.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:mebook/services/json_parser.dart';
 
 import '../../constants.dart';
@@ -25,16 +26,37 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   TextEditingController searchController = TextEditingController();
   String selectedCategory = "";
-  var _selectedTab = _SelectedTab.home;
+  List<String> categoryList = [
+    'Adventure',
+    'Crime',
+    'Design',
+    'Kids',
+    'Novel',
+    'Poetry',
+    'Romantic',
+    'Sci-Fi',
+    'Spiritual',
+    'Other'
+  ];
   List<Book> fetchedBooks = []; // Create a list to hold fetched books
   List<Book> fetchedBooks2 = []; // Create a list to hold fetched books
   DataFetcher? dataFetcher;
 
-  void _handleIndexChanged(int i) {
-    setState(() {
-      _selectedTab = _SelectedTab.values[i];
-    });
-  }
+  // void _handleIndexChanged(int i) {
+  //   setState(() {
+  //     _selectedTab = _SelectedTab.values[i];
+  //   });
+  // }
+
+  int _selectedIndex = 0;
+
+  final List<Widget> _screens = [
+    // Replace these with your actual screens or widgets
+    Text('Home'),
+    Text('Favorites'),
+    Text('Search'),
+    Text('Profile'),
+  ];
 
 // Function to fetch books
   Future<void> fetchBooks(String category) async {
@@ -121,18 +143,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 searchController: searchController,
               ),
               ChipsFilter(
-                categories: [
-                  'Adventure',
-                  'Crime',
-                  'Design',
-                  'Kids',
-                  'Novel',
-                  'Poetry',
-                  'Romantic',
-                  'Sci-Fi',
-                  'Spiritual',
-                  'Other'
-                ],
+                categories: categoryList,
                 onCategorySelected: (category) async {
                   setState(() {
                     selectedCategory = category;
@@ -148,49 +159,58 @@ class _HomeScreenState extends State<HomeScreen> {
               RecomendsBooks(books: fetchedBooks),
               RecomendsBooks(books: fetchedBooks2),
               // RecomendsBooks(),
-              SizedBox(height: 60)
+              // SizedBox(height: 60)
             ],
           ),
         ),
       ),
-      extendBody: true,
-      bottomNavigationBar: DotNavigationBar(
-        // margin: EdgeInsets.only(left: 10, right: 10),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey,
-            blurRadius: 10,
-          )
-        ],
-        enablePaddingAnimation: false,
-        // backgroundColor: kPrimaryColor,
-        currentIndex: _SelectedTab.values.indexOf(_selectedTab),
-        dotIndicatorColor: kPrimaryColor,
-        unselectedItemColor: Colors.grey[300],
-        splashBorderRadius: 50,
-        // enableFloatingNavBar: false,
-        onTap: _handleIndexChanged,
-        items: [
-          /// Home
-          DotNavigationBarItem(
-            icon: Icon(Icons.home_rounded),
-            selectedColor: kPrimaryColor,
+      // extendBody: true,
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+          color: Colors.white, // Adjust this to match your design
+          // boxShadow: [
+          //   BoxShadow(
+          //     blurRadius: 20,
+          //     color: Colors.black.withOpacity(0.1),
+          //   ),
+          // ],
+        ),
+        child: SafeArea(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 8),
+            child: GNav(
+              gap: 8,
+              activeColor: Color(0xff9d9686),
+              iconSize: 34,
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+              duration: Duration(milliseconds: 500),
+              tabBackgroundColor: Color(0xffe4e0cf),
+              tabs: [
+                GButton(
+                  icon: Icons.home,
+                  iconColor: Color(0xff9d9686),
+                  text: 'Home',
+                ),
+                GButton(
+                  icon: Icons.book_rounded,
+                  text: 'Favorites',
+                  iconColor: Color(0xff9d9686),
+                ),
+                GButton(
+                  icon: Icons.settings,
+                  text: 'Settings',
+                  iconColor: Color(0xff9d9686),
+                ),
+              ],
+              selectedIndex: _selectedIndex,
+              onTabChange: (index) {
+                setState(() {
+                  _selectedIndex = index;
+                });
+              },
+            ),
           ),
-
-          /// Likes
-          DotNavigationBarItem(
-            icon: Icon(Icons.book_rounded),
-            selectedColor: kPrimaryColor,
-          ),
-
-          /// Search
-          DotNavigationBarItem(
-            icon: Icon(Icons.settings),
-            selectedColor: kPrimaryColor,
-          ),
-
-          /// Profile
-        ],
+        ),
       ),
     );
   }

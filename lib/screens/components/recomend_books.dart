@@ -72,7 +72,7 @@ class RecomendsBooks extends StatelessWidget {
               height: 14, // Adjust height as needed
               decoration: BoxDecoration(
                 color: Colors.white, // Use white color as a placeholder
-                borderRadius: BorderRadius.circular(4),
+                borderRadius: BorderRadius.circular(3),
               ), // Use white color as a placeholder
             ),
             // Author's name
@@ -82,7 +82,7 @@ class RecomendsBooks extends StatelessWidget {
               height: 11, // Adjust height as needed
               decoration: BoxDecoration(
                 color: Colors.white, // Use white color as a placeholder
-                borderRadius: BorderRadius.circular(4),
+                borderRadius: BorderRadius.circular(3),
               ), // Use white color as a placeholder
             ),
           ],
