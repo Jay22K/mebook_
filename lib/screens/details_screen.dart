@@ -239,10 +239,37 @@ class _DetailsScreenState extends State<DetailsScreen> {
                             height: MediaQuery.of(context).size.width * 0.6,
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(6),
-                              child: Image.network(
-                                widget
-                                    .image, // Replace this with your image URL
-                                fit: BoxFit.fill,
+                              child: Stack(
+                                children: [
+                                  Image.network(
+                                    widget
+                                        .image, // Replace this with your image URL
+                                    fit: BoxFit.fill,
+                                  ),
+                                  Positioned(
+                                    top: 0,
+                                    left: 0,
+                                    child: Container(
+                                      padding: EdgeInsets.symmetric(
+                                          horizontal: 6, vertical: 3),
+                                      decoration: BoxDecoration(
+                                        color: Colors.black,
+                                        borderRadius: BorderRadius.only(
+                                          topLeft: Radius.circular(7),
+                                          bottomRight: Radius.circular(10),
+                                        ),
+                                      ),
+                                      child: Text(
+                                        widget.type,
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
                           ),

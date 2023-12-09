@@ -49,16 +49,44 @@ class BookAdaptor extends StatelessWidget {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              ClipRRect(
-                borderRadius: BorderRadius.horizontal(
-                  left: Radius.circular(10),
-                  right: Radius.circular(10),
-                ),
-                child: Image.network(
-                  image,
-                  width: 130,
-                  height: 185,
-                  fit: BoxFit.cover,
+              Container(
+                width: 130,
+                height: 185, // Height of the image
+                child: Stack(
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: NetworkImage(image),
+                          fit: BoxFit.fill,
+                        ),
+                        borderRadius: BorderRadius.circular(7),
+                      ),
+                    ),
+                    Positioned(
+                      top: 0,
+                      left: 0,
+                      child: Container(
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 6, vertical: 3),
+                        decoration: BoxDecoration(
+                          color: Colors.black,
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(7),
+                            bottomRight: Radius.circular(10),
+                          ),
+                        ),
+                        child: Text(
+                          type,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
               Expanded(
