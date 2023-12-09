@@ -66,6 +66,7 @@ class BookAdaptor extends StatelessWidget {
                     Positioned(
                       top: 0,
                       left: 0,
+                      
                       child: Container(
                         padding:
                             EdgeInsets.symmetric(horizontal: 6, vertical: 3),
