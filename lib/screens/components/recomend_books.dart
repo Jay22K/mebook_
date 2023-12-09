@@ -1,9 +1,11 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:mebook/util/router.dart';
 import 'package:shimmer/shimmer.dart';
 import '../../constants.dart';
 import '../../services/json_parser.dart';
+import '../details_screen.dart';
 
 class RecomendsBooks extends StatelessWidget {
   final List<Book> books; // List of books received from the API call
@@ -24,6 +26,10 @@ class RecomendsBooks extends StatelessWidget {
               image: book.image,
               title: book.title,
               author: book.author,
+              pages: book.pages,
+              publisher: book.publisher,
+              type: book.type,
+              year: book.year,
             );
           }).toList(),
         ),
@@ -54,7 +60,6 @@ class RecomendsBooks extends StatelessWidget {
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-
           children: [
             // Image at the top
             Container(
@@ -90,35 +95,20 @@ class RecomendsBooks extends StatelessWidget {
       ),
     );
   }
-
-  // Widget _buildShimmerItem() {
-  //   return Shimmer.fromColors(
-  //     baseColor: Colors.grey[300]!,
-  //     highlightColor: Colors.grey[100]!,
-  //     child: Container(
-  //       margin: EdgeInsets.only(
-  //         left: kDefaultPadding,
-  //         bottom: kDefaultPadding,
-  //       ),
-  //       width: 130,
-  //       height: 200, // Adjust height as needed
-  //       decoration: BoxDecoration(
-  //         color: Colors.white,
-  //         borderRadius: BorderRadius.circular(7),
-  //       ),
-  //     ),
-  //   );
-  // }
 }
 
 class BookCard extends StatelessWidget {
-  final String id, image, title, author;
+  final String id, image, title, author, pages, publisher, type, year;
 
   BookCard({
+    required this.author,
     required this.id,
     required this.image,
+    required this.pages,
+    required this.publisher,
     required this.title,
-    required this.author,
+    required this.type,
+    required this.year,
   });
 
   @override
@@ -135,6 +125,18 @@ class BookCard extends StatelessWidget {
           InkWell(
             onTap: () {
               log(id);
+              MyRouter.pushPage(
+                  context,
+                  DetailsScreen(
+                    author: author,
+                    id: id,
+                    image: image,
+                    pages: pages,
+                    publisher: publisher,
+                    title: title,
+                    type: type,
+                    year: year,
+                  ));
             },
             child: Container(
               width: 130,

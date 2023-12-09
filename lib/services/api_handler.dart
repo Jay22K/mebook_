@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:http/http.dart' as http;
+import 'book_json_parser.dart';
 import 'json_parser.dart';
 import 'book_json_parser.dart';
 
@@ -21,22 +22,26 @@ class DataFetcher {
     if (response.statusCode == 200) {
       log("Data got it.");
       final parsedData = Books.fromRawJson(response.body);
-      log("Book Response : " + response.body);
+      log("Book List Response : " + response.body);
       return parsedData.books;
     } else {
-      throw Exception('Failed to fetch books');
+      throw Exception('Failed to fetch books List');
     }
   }
 
-  Future<String> downloadBook(String bookId) async {
+  Future<BookData> downloadBook(String bookId) async {
+    log("book download api hits");
     final url = '$apiURL/book?id=$bookId';
+    log(url.toString());
     final response = await http.get(Uri.parse(url));
 
     if (response.statusCode == 200) {
-      final bookData = BookData.fromRawJson(response.body);
-      return bookData.download;
+      log("Data download got it.");
+      final parsedBook = BookParser.fromRawJson(response.body);
+      log("Book Description Response : " + response.body);
+      return parsedBook.bookData;
     } else {
-      throw Exception('Failed to download book');
+      throw Exception('Failed to fetch book Description');
     }
   }
 }

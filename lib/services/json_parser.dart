@@ -55,7 +55,7 @@ class Book {
         required this.publisher,
         required this.size,
         required this.title,
-        //required this.type,
+        required this.type,
         required this.year,
     });
 
@@ -67,7 +67,7 @@ class Book {
     final String publisher;
     final String size;
     final String title;
-    //final Type type;
+    final String type;
     final String year;
 
     factory Book.fromRawJson(String str) => Book.fromJson(json.decode(str));
@@ -83,7 +83,7 @@ class Book {
         publisher: json["publisher"],
         size: json["size"],
         title: json["title"],
-        //type: typeValues.map[json["type"]],
+        type: json["type"],
         year: json["year"],
     );
 
@@ -96,7 +96,7 @@ class Book {
         "publisher": publisher,
         "size": size,
         "title": title,
-        //"type": typeValues.reverse[type],
+        "type": type,
         "year": year,
     };
 }

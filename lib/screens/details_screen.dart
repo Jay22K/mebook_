@@ -1,10 +1,102 @@
+import 'dart:convert';
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:mebook/screens/components/recomend_books.dart';
+import 'package:shimmer/shimmer.dart';
 
 import '../constants.dart';
+import '../services/api_handler.dart';
+import '../services/book_json_parser.dart';
+import '../services/json_parser.dart';
 
-class DetailsScreen extends StatelessWidget {
-  DetailsScreen({super.key});
+class DetailsScreen extends StatefulWidget {
+  final String author, id, image, pages, publisher, title, type, year;
+
+  DetailsScreen(
+      {super.key,
+      required this.author,
+      required this.id,
+      required this.image,
+      required this.pages,
+      required this.publisher,
+      required this.title,
+      required this.type,
+      required this.year});
+
+  @override
+  State<DetailsScreen> createState() => _DetailsScreenState();
+}
+
+class _DetailsScreenState extends State<DetailsScreen> {
+  Widget _buildShimmerLine() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 4.0),
+      child: Container(
+        width: double.infinity,
+        height: 12.0,
+        color: kSecondColor, // You can set any color here
+      ),
+    );
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    fetchBooks(widget.author);
+    downloadBook(widget.id);
+  }
+
   bool fabHovered = true;
+  List<Book> fetchedBooks = [];
+  String? sescription;
+  DataFetcher? dataFetcher;
+  BookData? bookDownload;
+
+  String? downloadUrl, description, bookinfo;
+
+// Function to fetch books
+  Future<void> fetchBooks(String category) async {
+    setState(() {
+      fetchedBooks = []; // Set fetchedBooks to an empty list
+    });
+    try {
+      dataFetcher = DataFetcher(query: category);
+      final books = await dataFetcher!.fetchBooks();
+
+      setState(() {
+        fetchedBooks = books;
+      });
+    } catch (e) {
+      // Handle errors, if any
+      log('Error fetching books: $e');
+    }
+  }
+
+  Future<void> downloadBook(String id) async {
+    try {
+      final downloadLink = await dataFetcher!.downloadBook(id);
+      bookDownload = downloadLink;
+      // Extracting values from JSON response
+      bookinfo = bookDownload!.toRawJson();
+      // Extracting values from JSON response
+      Map<String, dynamic> decodedJson = jsonDecode(bookinfo!);
+
+      // Extract 'description' and 'download' from the decoded JSON
+      setState(() {
+        description = decodedJson['description'];
+        downloadUrl = decodedJson['download'];
+      });
+
+      // Now you can use the 'description' and 'downloadUrl' as needed
+      // print('Description: $description');
+      // print('Download URL: $downloadUrl');
+      // log("book info :" + bookDownload!.toRawJson());
+    } catch (e) {
+      log('Error fetching book Description: $e');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,7 +132,7 @@ class DetailsScreen extends StatelessWidget {
                           child: Container(
                             width: MediaQuery.of(context).size.width /
                                 1.3, // Half of the screen width
-                            height: MediaQuery.of(context).size.height / 2.45,
+                            height: MediaQuery.of(context).size.height / 2.32,
                             decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.only(
@@ -59,7 +151,7 @@ class DetailsScreen extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    'Diane Lindsey Reeves, Lindsey Clasen, Nancy Bond',
+                                    widget.author,
                                     textAlign: TextAlign.start,
                                     style: TextStyle(
                                         fontSize: 11,
@@ -70,7 +162,7 @@ class DetailsScreen extends StatelessWidget {
                                     height: 10,
                                   ),
                                   Text(
-                                    'Career Ideas for Kids Who Like Adventure and Travel',
+                                    widget.title,
                                     textAlign: TextAlign.start,
                                     style: TextStyle(
                                         fontSize: 18,
@@ -97,7 +189,7 @@ class DetailsScreen extends StatelessWidget {
                                     ),
                                     child: Center(
                                       child: Text(
-                                        "Pages: 203",
+                                        "Pages: ${widget.pages}",
                                         style: TextStyle(
                                           fontSize: 14,
                                           color: Color.fromRGBO(35, 28, 7, 1),
@@ -124,12 +216,13 @@ class DetailsScreen extends StatelessWidget {
                           ),
                           child: SizedBox(
                             width: 130,
-                            height: MediaQuery.of(context).size.width * 0.565,
+                            height: MediaQuery.of(context).size.width * 0.6,
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(6),
                               child: Image.network(
-                                'https://via.placeholder.com/150', // Replace this with your image URL
-                                fit: BoxFit.cover,
+                                widget
+                                    .image, // Replace this with your image URL
+                                fit: BoxFit.fill,
                               ),
                             ),
                           ),
@@ -153,29 +246,37 @@ class DetailsScreen extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(
                             left: 30.0, top: 5, right: 30.0, bottom: 20),
-                        child: Text(
-                          "Explore what Flutter has to offer, where it came from, and where it’s going. Mobile development is progressing at a fast rate and with Flutter – an open-source mobile application development SDK created by Google – you can develop applications for Android and iOS, as well as Google Fuchsia.Learn to create three apps (a personal information manager, a chat system, and a game project) that you can install on your mobile devices and use for real",
-                          style: TextStyle(color: Colors.white),
-                          // maxLines: 4,
-                          // overflow: TextOverflow.ellipsis,
-                          // style: TextStyle(fontSize: 14),
-                        ),
+                        child: description == null
+                            ? Text(
+                                "________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+                                style: TextStyle(color: Colors.white),
+                                // maxLines: 4,
+                                // overflow: TextOverflow.ellipsis,
+                                // style: TextStyle(fontSize: 14),
+                              )
+                            : Text(
+                                description!,
+                                style: TextStyle(color: Colors.white),
+                              ),
                       ),
                     ],
                   ),
                 ],
               ),
             ),
-            SizedBox(
-              height: 30,
-            ),
+            SizedBox(height: 30),
             Padding(
               padding: const EdgeInsets.only(left: 30.0),
               child: Text(
-                "Similar Books",
-                style: TextStyle(color: kSecondColor, fontSize: 20, fontWeight: FontWeight.bold),
+                "Similar  Auther",
+                style: TextStyle(
+                    color: kSecondColor,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold),
               ),
-            )
+            ),
+            SizedBox(height: 30),
+            RecomendsBooks(books: fetchedBooks),
           ],
         ),
       ),
@@ -190,6 +291,8 @@ class DetailsScreen extends StatelessWidget {
           backgroundColor: kSecondColor,
           onPressed: () {
             // Handle FAB tap
+
+            print("book URL : " + downloadUrl!);
           },
           child: Icon(Icons.file_download),
         ),
@@ -233,7 +336,7 @@ class DetailsScreen extends StatelessWidget {
                 ),
                 child: Center(
                   child: Text(
-                    "PDF",
+                    widget.type,
                     style: TextStyle(
                       fontSize: 14,
                       color: Color.fromRGBO(35, 28, 7, 1),

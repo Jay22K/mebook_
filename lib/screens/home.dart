@@ -48,6 +48,13 @@ class _HomeScreenState extends State<HomeScreen> {
   //   });
   // }
 
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    searchController.dispose();
+  }
+
   int _selectedIndex = 0;
 
   final List<Widget> _screens = [

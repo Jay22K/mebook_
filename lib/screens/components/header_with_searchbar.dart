@@ -102,7 +102,9 @@ class HeaderWithSearchBar extends StatelessWidget {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => DetailsScreen()));
+                                    builder: (context) => ResultScreen(
+                                          query: searchString,
+                                        )));
                           }
                         },
                         icon: SvgPicture.asset("assets/imgs/search.svg"),
