@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:developer';
 
 import 'package:dot_navigation_bar/dot_navigation_bar.dart';
@@ -9,6 +10,7 @@ import 'package:mebook/services/json_parser.dart';
 
 import '../../constants.dart';
 import '../services/api_handler.dart';
+import '../services/book_json_parser.dart';
 import 'components/appbar.dart';
 import 'components/chips.dart';
 import 'components/header_with_searchbar.dart';
@@ -65,20 +67,45 @@ class _HomeScreenState extends State<HomeScreen> {
     Text('Profile'),
   ];
 
+  bool fabHovered = true;
+
+  String? sescription;
+
+  BookData? bookDownload;
+  Books? booksdata;
+
+  int limit = 0;
+  String result = "";
+  int status = 0;
+  int totalFiles = 0;
+  int totalPages = 0;
+
+  String? downloadUrl, description, bookinfo;
+
 // Function to fetch books
-  Future<void> fetchBooks(String category) async {
+  Future<void> fetchBooks(String category, int page) async {
     setState(() {
       fetchedBooks = []; // Set fetchedBooks to an empty list
-      fetchedBooks2 = []; // Set fetchedBooks to an empty list
     });
-
-    //TODO:  need to implement this
     try {
-      dataFetcher = DataFetcher(query: category, page: 1);
+      dataFetcher = DataFetcher(query: category, page: page);
       final books = await dataFetcher!.fetchBooks();
+      booksdata = books;
 
+      String bookdataresponse =
+          booksdata!.toRawJson(); // this is  string json response
+
+      // Convert the JSON string to a map
+      Map<String, dynamic> jsonMap = json.decode(bookdataresponse);
+
+      // Access the "books" list from the JSON and convert it to a List<Book>
+      List<dynamic> booksJson = jsonMap['books'];
+      List<Book> booksList =
+          booksJson.map((bookJson) => Book.fromJson(bookJson)).toList();
+
+      // Update fetchedBooks with the retrieved books list
       setState(() {
-        fetchedBooks = books;
+        fetchedBooks = booksList;
       });
     } catch (e) {
       // Handle errors, if any
@@ -87,17 +114,29 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
 // Function to fetch books
-  Future<void> fetchBooks2(String category) async {
+  Future<void> fetchBooks2(String category, int page) async {
     setState(() {
       fetchedBooks2 = []; // Set fetchedBooks to an empty list
     });
-    //TODO:  need to implement this
     try {
-      dataFetcher = DataFetcher(query: category, page: 1);
+      dataFetcher = DataFetcher(query: category, page: page);
       final books = await dataFetcher!.fetchBooks();
+      booksdata = books;
 
+      String bookdataresponse =
+          booksdata!.toRawJson(); // this is  string json response
+
+      // Convert the JSON string to a map
+      Map<String, dynamic> jsonMap = json.decode(bookdataresponse);
+
+      // Access the "books" list from the JSON and convert it to a List<Book>
+      List<dynamic> booksJson = jsonMap['books'];
+      List<Book> booksList =
+          booksJson.map((bookJson) => Book.fromJson(bookJson)).toList();
+
+      // Update fetchedBooks with the retrieved books list
       setState(() {
-        fetchedBooks2 = books;
+        fetchedBooks2 = booksList;
       });
     } catch (e) {
       // Handle errors, if any
@@ -161,9 +200,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     log(selectedCategory);
                   });
                   await fetchBooks(
-                      selectedCategory); // Call fetchBooks function
+                      selectedCategory, 1); // Call fetchBooks function
                   await fetchBooks2(
-                      selectedCategory + "&page=2"); // Call fetchBooks function
+                      selectedCategory, 2); // Call fetchBooks function
                 },
               ),
               RecomendsBooks(books: fetchedBooks),

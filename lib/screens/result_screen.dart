@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
@@ -24,13 +25,23 @@ class ResultScreen extends StatefulWidget {
 class _ResultScreenState extends State<ResultScreen> {
   final searchController = TextEditingController();
   List<Book> fetchedBooks = [];
+  Books? booksdata;
   DataFetcher? dataFetcher;
   int currentPage = 1;
+
+  int limit = 0;
+  String result = "";
+  int status = 0;
+  int totalFiles = 0;
+  int totalPages = 0;
+  int show = 0;
+
   @override
   void initState() {
     super.initState();
     searchController.text = widget.query!;
-    fetchBooks(widget.query!, currentPage);
+    fetchBooks(widget.query!, 1);
+    totalPages = 0;
   }
 
 // Function to fetch books
@@ -41,14 +52,53 @@ class _ResultScreenState extends State<ResultScreen> {
     try {
       dataFetcher = DataFetcher(query: category, page: page);
       final books = await dataFetcher!.fetchBooks();
+      booksdata = books;
 
+      String bookdataresponse =
+          booksdata!.toRawJson(); // this is  string json response
+
+      // Convert the JSON string to a map
+      Map<String, dynamic> jsonMap = json.decode(bookdataresponse);
+
+      // Access the "books" list from the JSON and convert it to a List<Book>
+      List<dynamic> booksJson = jsonMap['books'];
+      List<Book> booksList =
+          booksJson.map((bookJson) => Book.fromJson(bookJson)).toList();
+
+      // Update fetchedBooks with the retrieved books list
       setState(() {
-        fetchedBooks = books;
+        fetchedBooks = booksList;
+
+        currentPage = page;
       });
+
+      limit = jsonMap['limit'];
+      result = jsonMap['result'];
+      status = jsonMap['status'];
+      totalFiles = jsonMap['totalFiles'];
+      totalPages = jsonMap['totalPages'];
+
+      updateShow(totalPages);
     } catch (e) {
       // Handle errors, if any
       log('Error fetching books: $e');
     }
+  }
+
+  void updateShow(int totalPages) {
+    int showValue = 1;
+
+    if (totalPages >= 2 && totalPages <= 4) {
+      showValue = totalPages - 1;
+    } else if (totalPages >= 5 && totalPages <= 6) {
+      showValue = totalPages - 2;
+    } else if (totalPages >= 7) {
+      showValue = 5;
+    }
+
+    setState(() {
+      show = showValue;
+    });
   }
 
   @override
@@ -61,11 +111,11 @@ class _ResultScreenState extends State<ResultScreen> {
         title: Text('Search any Books here...'),
       ),
       body: Column(
-        children: <Widget>[
+        children: [
           // appbar(title: 'Hello , Jayesh!'),
           appbarForResultScreen(
             onSearchPressed: () {
-              fetchBooks(searchController.text, currentPage);
+              fetchBooks(searchController.text, 1);
             },
             searchController: searchController,
           ),
@@ -92,43 +142,51 @@ class _ResultScreenState extends State<ResultScreen> {
                     },
                   ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Pagination(
-              height: 30,
-              // width: 20,
-              paginateButtonStyles: PaginateButtonStyles(
-                  backgroundColor: kPrimaryColor,
-                  activeBackgroundColor: kSecondColor),
-              prevButtonStyles: PaginateSkipButton(
-                  icon: const Icon(
-                    Icons.arrow_back_ios,
-                    size: 13,
-                  ),
-                  buttonBackgroundColor: kPrimaryColor,
-                  borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(20),
-                      bottomLeft: Radius.circular(20))),
-              nextButtonStyles: PaginateSkipButton(
-                  icon: const Icon(
-                    Icons.arrow_forward_ios,
-                    size: 13,
-                  ),
-                  buttonBackgroundColor: kPrimaryColor,
-                  borderRadius: const BorderRadius.only(
-                      topRight: Radius.circular(20),
-                      bottomRight: Radius.circular(20))),
-              onPageChange: (number) {
-                setState(() {
-                  currentPage = number;
-                });
-              },
-              useGroup: false,
-              totalPage: 10,
-              show: 2,
-              currentPage: currentPage,
-            ),
-          )
+          if (totalPages == 0 || totalPages == 1)
+            Container()
+          else
+            Container(
+              height: 36,
+              child: Padding(
+                padding: const EdgeInsets.all(2.0),
+                child: Pagination(
+                  // height: 30,
+                  width: MediaQuery.of(context).size.width * .7,
+                  paginateButtonStyles: PaginateButtonStyles(
+                      backgroundColor: kPrimaryColor,
+                      activeBackgroundColor: kSecondColor),
+                  prevButtonStyles: PaginateSkipButton(
+                      icon: const Icon(
+                        Icons.arrow_back_ios,
+                        size: 13,
+                      ),
+                      buttonBackgroundColor: kPrimaryColor,
+                      borderRadius: const BorderRadius.only(
+                          topLeft: Radius.circular(20),
+                          bottomLeft: Radius.circular(20))),
+                  nextButtonStyles: PaginateSkipButton(
+                      icon: const Icon(
+                        Icons.arrow_forward_ios,
+                        size: 13,
+                      ),
+                      buttonBackgroundColor: kPrimaryColor,
+                      borderRadius: const BorderRadius.only(
+                          topRight: Radius.circular(20),
+                          bottomRight: Radius.circular(20))),
+                  onPageChange: (number) {
+                    setState(() {
+                      currentPage = number;
+                    });
+                    fetchBooks(searchController.text, currentPage);
+                  },
+
+                  useGroup: true,
+                  totalPage: totalPages,
+                  show: show,
+                  currentPage: currentPage,
+                ),
+              ),
+            )
         ],
       ),
     );

@@ -9,11 +9,11 @@ import 'book_json_parser.dart';
 const apiURL = 'https://mebookapi.onrender.com/api';
 
 class DataFetcher {
-  DataFetcher({required this.query, required this.page });
-   int page; 
+  DataFetcher({required this.query, required this.page});
+  int page;
   final String query;
 
-  Future<List<Book>> fetchBooks() async {
+  Future<Books> fetchBooks() async {
     log("book search api hits");
     final url = Uri.parse("$apiURL/default?query=$query&page=$page");
 
@@ -26,23 +26,32 @@ class DataFetcher {
       log("Book List Response : " + response.body);
       if (parsedData.books.isEmpty) {
         // If no books are returned, create a temporary book object or placeholder
-        Book tempBook = Book(
+        final placeholderBook = Book(
           author: "N/A",
           id: "N/A",
           image: imgUrl,
           pages: "0",
           publisher: "N/A",
-          size: "0",
-          title: "No Books Available",
+          size: "N/A",
+          title: "No books found",
           type: "N/A",
           year: "N/A",
         );
 
-        // Return a list with the temporary book object
-        return [tempBook];
+        // Create a Books object with the placeholder book
+        final emptyBooks = Books(
+          books: [placeholderBook],
+          limit: 0,
+          result: "success",
+          status: 200,
+          totalFiles: 0,
+          totalPages: 0,
+        );
+
+        return emptyBooks;
       } else {
         // Return the list of books if available
-        return parsedData.books;
+        return parsedData;
       }
     } else {
       throw Exception('Failed to fetch books List');
