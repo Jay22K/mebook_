@@ -43,7 +43,7 @@ class BookAdaptor extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         child: Container(
           decoration: BoxDecoration(
-            // color: kBackgroundColor,
+            color: kBackgroundColor,
             borderRadius: BorderRadius.circular(10),
           ),
           child: Row(

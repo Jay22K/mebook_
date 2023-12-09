@@ -43,7 +43,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
   @override
   void initState() {
     super.initState();
-    fetchBooks(widget.author);
+    fetchBooks(widget.author, 1);
     downloadBook(widget.id);
   }
 
@@ -52,20 +52,40 @@ class _DetailsScreenState extends State<DetailsScreen> {
   String? sescription;
   DataFetcher? dataFetcher;
   BookData? bookDownload;
+  Books? booksdata;
+
+  int limit = 0;
+  String result = "";
+  int status = 0;
+  int totalFiles = 0;
+  int totalPages = 0;
 
   String? downloadUrl, description, bookinfo;
 
 // Function to fetch books
-  Future<void> fetchBooks(String category) async {
+  Future<void> fetchBooks(String category, int page) async {
     setState(() {
       fetchedBooks = []; // Set fetchedBooks to an empty list
     });
     try {
-      dataFetcher = DataFetcher(query: category);
+      dataFetcher = DataFetcher(query: category, page: page);
       final books = await dataFetcher!.fetchBooks();
+      booksdata = books;
 
+      String bookdataresponse =
+          booksdata!.toRawJson(); // this is  string json response
+
+      // Convert the JSON string to a map
+      Map<String, dynamic> jsonMap = json.decode(bookdataresponse);
+
+      // Access the "books" list from the JSON and convert it to a List<Book>
+      List<dynamic> booksJson = jsonMap['books'];
+      List<Book> booksList =
+          booksJson.map((bookJson) => Book.fromJson(bookJson)).toList();
+
+      // Update fetchedBooks with the retrieved books list
       setState(() {
-        fetchedBooks = books;
+        fetchedBooks = booksList;
       });
     } catch (e) {
       // Handle errors, if any

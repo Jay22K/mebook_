@@ -11,9 +11,9 @@ const kListTextStyle = TextStyle(
   color: Colors.white38,
 );
 
+const String imgUrl =
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png";
 const double kDefaultPadding = 20.0;
-
-
 
 class CustomScroll extends ScrollBehavior {
   @override

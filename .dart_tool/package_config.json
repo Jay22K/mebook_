@@ -14,6 +14,12 @@
       "languageVersion": "2.18"
     },
     {
+      "name": "bloc",
+      "rootUri": "file:///C:/Users/A/AppData/Local/Pub/Cache/hosted/pub.dev/bloc-7.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "boolean_selector",
       "rootUri": "file:///C:/Users/A/AppData/Local/Pub/Cache/hosted/pub.dev/boolean_selector-2.1.1",
       "packageUri": "lib/",
@@ -74,16 +80,22 @@
       "languageVersion": "2.17"
     },
     {
+      "name": "flutter_bloc",
+      "rootUri": "file:///C:/Users/A/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_bloc-7.3.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "flutter_lints",
       "rootUri": "file:///C:/Users/A/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_lints-2.0.1",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     },
     {
-      "name": "flutter_neumorphic",
-      "rootUri": "file:///C:/Users/A/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_neumorphic-3.2.0",
+      "name": "flutter_pagination",
+      "rootUri": "file:///C:/Users/A/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_pagination-0.0.8",
       "packageUri": "lib/",
-      "languageVersion": "2.12"
+      "languageVersion": "2.15"
     },
     {
       "name": "flutter_svg",
@@ -152,6 +164,18 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "nested",
+      "rootUri": "file:///C:/Users/A/AppData/Local/Pub/Cache/hosted/pub.dev/nested-1.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "pagination_view",
+      "rootUri": "file:///C:/Users/A/AppData/Local/Pub/Cache/hosted/pub.dev/pagination_view-2.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "path",
       "rootUri": "file:///C:/Users/A/AppData/Local/Pub/Cache/hosted/pub.dev/path-1.8.2",
       "packageUri": "lib/",
@@ -174,6 +198,12 @@
       "rootUri": "file:///C:/Users/A/AppData/Local/Pub/Cache/hosted/pub.dev/petitparser-5.0.0",
       "packageUri": "lib/",
       "languageVersion": "2.16"
+    },
+    {
+      "name": "provider",
+      "rootUri": "file:///C:/Users/A/AppData/Local/Pub/Cache/hosted/pub.dev/provider-6.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
     },
     {
       "name": "shimmer",
@@ -248,7 +278,7 @@
       "languageVersion": "2.17"
     }
   ],
-  "generated": "2023-12-05T17:23:30.265399Z",
+  "generated": "2023-12-09T19:50:28.853987Z",
   "generator": "pub",
   "generatorVersion": "2.19.6"
 }
