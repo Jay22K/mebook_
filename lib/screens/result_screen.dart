@@ -67,6 +67,7 @@ class _ResultScreenState extends State<ResultScreen> {
 
       // Update fetchedBooks with the retrieved books list
       setState(() {
+        
         fetchedBooks = booksList;
 
         currentPage = page;
