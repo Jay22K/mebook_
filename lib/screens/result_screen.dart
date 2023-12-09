@@ -1,6 +1,8 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_pagination/flutter_pagination.dart';
+import 'package:flutter_pagination/widgets/button_styles.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:mebook/constants.dart';
 
@@ -23,20 +25,21 @@ class _ResultScreenState extends State<ResultScreen> {
   final searchController = TextEditingController();
   List<Book> fetchedBooks = [];
   DataFetcher? dataFetcher;
+  int currentPage = 1;
   @override
   void initState() {
     super.initState();
     searchController.text = widget.query!;
-    fetchBooks(widget.query!);
+    fetchBooks(widget.query!, currentPage);
   }
 
 // Function to fetch books
-  Future<void> fetchBooks(String category) async {
+  Future<void> fetchBooks(String category, int page) async {
     setState(() {
       fetchedBooks = []; // Set fetchedBooks to an empty list
     });
     try {
-      dataFetcher = DataFetcher(query: category);
+      dataFetcher = DataFetcher(query: category, page: page);
       final books = await dataFetcher!.fetchBooks();
 
       setState(() {
@@ -51,12 +54,18 @@ class _ResultScreenState extends State<ResultScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 243, 243, 243),
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: kPrimaryColor,
+        title: Text('Search any Books here...'),
+      ),
       body: Column(
         children: <Widget>[
-          appbar(title: 'Hello , Jayesh!'),
+          // appbar(title: 'Hello , Jayesh!'),
           appbarForResultScreen(
             onSearchPressed: () {
-              fetchBooks(searchController.text);
+              fetchBooks(searchController.text, currentPage);
             },
             searchController: searchController,
           ),
@@ -83,6 +92,43 @@ class _ResultScreenState extends State<ResultScreen> {
                     },
                   ),
           ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Pagination(
+              height: 30,
+              // width: 20,
+              paginateButtonStyles: PaginateButtonStyles(
+                  backgroundColor: kPrimaryColor,
+                  activeBackgroundColor: kSecondColor),
+              prevButtonStyles: PaginateSkipButton(
+                  icon: const Icon(
+                    Icons.arrow_back_ios,
+                    size: 13,
+                  ),
+                  buttonBackgroundColor: kPrimaryColor,
+                  borderRadius: const BorderRadius.only(
+                      topLeft: Radius.circular(20),
+                      bottomLeft: Radius.circular(20))),
+              nextButtonStyles: PaginateSkipButton(
+                  icon: const Icon(
+                    Icons.arrow_forward_ios,
+                    size: 13,
+                  ),
+                  buttonBackgroundColor: kPrimaryColor,
+                  borderRadius: const BorderRadius.only(
+                      topRight: Radius.circular(20),
+                      bottomRight: Radius.circular(20))),
+              onPageChange: (number) {
+                setState(() {
+                  currentPage = number;
+                });
+              },
+              useGroup: false,
+              totalPage: 10,
+              show: 2,
+              currentPage: currentPage,
+            ),
+          )
         ],
       ),
     );

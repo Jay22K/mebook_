@@ -61,7 +61,8 @@ class _DetailsScreenState extends State<DetailsScreen> {
       fetchedBooks = []; // Set fetchedBooks to an empty list
     });
     try {
-      dataFetcher = DataFetcher(query: category);
+      //TODO: need to implement this...
+      dataFetcher = DataFetcher(query: category, page: 1);
       final books = await dataFetcher!.fetchBooks();
 
       setState(() {

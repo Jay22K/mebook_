@@ -71,8 +71,10 @@ class _HomeScreenState extends State<HomeScreen> {
       fetchedBooks = []; // Set fetchedBooks to an empty list
       fetchedBooks2 = []; // Set fetchedBooks to an empty list
     });
+
+    //TODO:  need to implement this
     try {
-      dataFetcher = DataFetcher(query: category);
+      dataFetcher = DataFetcher(query: category, page: 1);
       final books = await dataFetcher!.fetchBooks();
 
       setState(() {
@@ -89,8 +91,9 @@ class _HomeScreenState extends State<HomeScreen> {
     setState(() {
       fetchedBooks2 = []; // Set fetchedBooks to an empty list
     });
+    //TODO:  need to implement this
     try {
-      dataFetcher = DataFetcher(query: category);
+      dataFetcher = DataFetcher(query: category, page: 1);
       final books = await dataFetcher!.fetchBooks();
 
       setState(() {
