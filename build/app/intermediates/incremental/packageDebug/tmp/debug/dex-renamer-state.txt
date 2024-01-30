@@ -1,4 +1,16 @@
-#Sun Dec 10 03:57:38 IST 2023
-base.0=G\:\\Projects\\andriod projects\\mebook_\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+#Thu Jan 18 00:48:53 IST 2024
+path.4=1/classes.dex
+path.3=13/classes.dex
+path.2=0/classes.dex
+path.1=0/classes.dex
 path.0=classes.dex
+base.4=G\:\\Projects\\andriod projects\\mebook_\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\1\\classes.dex
+base.3=G\:\\Projects\\andriod projects\\mebook_\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\13\\classes.dex
+base.2=G\:\\Projects\\andriod projects\\mebook_\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.1=G\:\\Projects\\andriod projects\\mebook_\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\0\\classes.dex
+base.0=G\:\\Projects\\andriod projects\\mebook_\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+renamed.3=classes4.dex
+renamed.2=classes3.dex
+renamed.1=classes2.dex
 renamed.0=classes.dex
+renamed.4=classes5.dex

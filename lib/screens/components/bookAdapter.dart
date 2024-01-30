@@ -27,17 +27,18 @@ class BookAdaptor extends StatelessWidget {
       onTap: () {
         log(id);
         MyRouter.pushPage(
-            context,
-            DetailsScreen(
-              author: author,
-              id: id,
-              image: image,
-              pages: pages,
-              publisher: publisher,
-              title: title,
-              type: type,
-              year: year,
-            ));
+          context,
+          DetailsScreen(
+            author: author,
+            id: id,
+            image: image,
+            pages: pages,
+            publisher: publisher,
+            title: title,
+            type: type,
+            year: year,
+          ),
+        );
       },
       child: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -66,7 +67,6 @@ class BookAdaptor extends StatelessWidget {
                     Positioned(
                       top: 0,
                       left: 0,
-                      
                       child: Container(
                         padding:
                             EdgeInsets.symmetric(horizontal: 6, vertical: 3),

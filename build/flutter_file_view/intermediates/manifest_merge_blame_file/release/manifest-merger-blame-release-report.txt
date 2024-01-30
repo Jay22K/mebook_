@@ -1,0 +1,53 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    xmlns:tools="http://schemas.android.com/tools"
+4    package="com.file.view" >
+5
+6    <uses-sdk
+7        android:minSdkVersion="16"
+7-->C:\Users\A\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_file_view-2.2.1\android\src\main\AndroidManifest.xml
+8        android:targetSdkVersion="16" />
+8-->C:\Users\A\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_file_view-2.2.1\android\src\main\AndroidManifest.xml
+9
+10    <!-- 访问网络状态 -->
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->C:\Users\A\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_file_view-2.2.1\android\src\main\AndroidManifest.xml:6:5-67
+11-->C:\Users\A\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_file_view-2.2.1\android\src\main\AndroidManifest.xml:6:22-64
+12    <!-- 允许程序访问有关GSM网络信息 -->
+13    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+13-->C:\Users\A\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_file_view-2.2.1\android\src\main\AndroidManifest.xml:8:5-79
+13-->C:\Users\A\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_file_view-2.2.1\android\src\main\AndroidManifest.xml:8:22-76
+14    <!-- 允许程序写入设置 -->
+15    <uses-permission
+15-->C:\Users\A\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_file_view-2.2.1\android\src\main\AndroidManifest.xml:10:5-12:47
+16        android:name="android.permission.WRITE_SETTINGS"
+16-->C:\Users\A\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_file_view-2.2.1\android\src\main\AndroidManifest.xml:11:9-57
+17        tools:ignore="ProtectedPermissions" />
+17-->C:\Users\A\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_file_view-2.2.1\android\src\main\AndroidManifest.xml:12:9-44
+18
+19    <application android:hardwareAccelerated="true" >
+19-->C:\Users\A\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_file_view-2.2.1\android\src\main\AndroidManifest.xml:14:5-27:19
+19-->C:\Users\A\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_file_view-2.2.1\android\src\main\AndroidManifest.xml:14:18-52
+20
+21        <!-- 1. 在AndroidManifest.xml中增加内核首次加载时优化Service声明。 -->
+22        <!-- 2. 该Service仅在TBS内核首次Dex加载时触发并执行dex2oat任务，任务完成后自动结束。 -->
+23        <service
+23-->C:\Users\A\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_file_view-2.2.1\android\src\main\AndroidManifest.xml:17:9-20:41
+24            android:name="com.tencent.smtt.export.external.DexClassLoaderProviderService"
+24-->C:\Users\A\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_file_view-2.2.1\android\src\main\AndroidManifest.xml:18:13-90
+25            android:label="dexopt"
+25-->C:\Users\A\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_file_view-2.2.1\android\src\main\AndroidManifest.xml:19:13-35
+26            android:process=":dexopt" />
+26-->C:\Users\A\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_file_view-2.2.1\android\src\main\AndroidManifest.xml:20:13-38
+27
+28        <!-- https://x5.tencent.com/docs/questions.html 问题3.6解决方案 -->
+29        <!-- 在Android P机型遇到org.apache包名找不到的crash -->
+30        <uses-library
+30-->C:\Users\A\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_file_view-2.2.1\android\src\main\AndroidManifest.xml:24:9-26:40
+31            android:name="org.apache.http.legacy"
+31-->C:\Users\A\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_file_view-2.2.1\android\src\main\AndroidManifest.xml:25:13-50
+32            android:required="false" />
+32-->C:\Users\A\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_file_view-2.2.1\android\src\main\AndroidManifest.xml:26:13-37
+33    </application>
+34
+35</manifest>

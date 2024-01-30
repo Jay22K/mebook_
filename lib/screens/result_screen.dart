@@ -7,6 +7,7 @@ import 'package:flutter_pagination/widgets/button_styles.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:mebook/constants.dart';
 
+
 import '../services/api_handler.dart';
 import '../services/json_parser.dart';
 import 'components/appbar.dart';
@@ -85,6 +86,7 @@ class _ResultScreenState extends State<ResultScreen> {
     }
   }
 
+
   void updateShow(int totalPages) {
     int showValue = 1;
 
@@ -108,7 +110,7 @@ class _ResultScreenState extends State<ResultScreen> {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: kPrimaryColor,
-        title: Text('Search any Books here...'),
+        title: Text('Search any Books here'),
       ),
       body: Column(
         children: [

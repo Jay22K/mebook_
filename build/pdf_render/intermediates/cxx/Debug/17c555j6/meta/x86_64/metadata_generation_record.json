@@ -1,0 +1,184 @@
+[
+  {
+    "level_": 0,
+    "message_": "Start JSON generation. Platform version: 21 min SDK version: x86_64",
+    "file_": "C:\\Users\\A\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dev\\pdf_render-1.4.0\\android\\CMakeLists.txt",
+    "tag_": "debug|x86_64",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 2086733468
+  },
+  {
+    "level_": 0,
+    "message_": "rebuilding JSON C:\\Users\\A\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dev\\pdf_render-1.4.0\\android\\.cxx\\Debug\\17c555j6\\x86_64\\android_gradle_build.json due to:",
+    "file_": "C:\\Users\\A\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dev\\pdf_render-1.4.0\\android\\CMakeLists.txt",
+    "tag_": "debug|x86_64",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": -1940961950
+  },
+  {
+    "level_": 0,
+    "message_": "- expected json C:\\Users\\A\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dev\\pdf_render-1.4.0\\android\\.cxx\\Debug\\17c555j6\\x86_64\\android_gradle_build.json file is not present, will remove stale json folder",
+    "file_": "C:\\Users\\A\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dev\\pdf_render-1.4.0\\android\\CMakeLists.txt",
+    "tag_": "debug|x86_64",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": -819589892
+  },
+  {
+    "level_": 0,
+    "message_": "- missing previous command file C:\\Users\\A\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dev\\pdf_render-1.4.0\\android\\.cxx\\Debug\\17c555j6\\x86_64\\metadata_generation_command.txt, will remove stale json folder",
+    "file_": "C:\\Users\\A\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dev\\pdf_render-1.4.0\\android\\CMakeLists.txt",
+    "tag_": "debug|x86_64",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": -1098764262
+  },
+  {
+    "level_": 0,
+    "message_": "- command changed from previous, will remove stale json folder",
+    "file_": "C:\\Users\\A\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dev\\pdf_render-1.4.0\\android\\CMakeLists.txt",
+    "tag_": "debug|x86_64",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 886223527
+  },
+  {
+    "level_": 0,
+    "message_": "removing stale contents from \u0027C:\\Users\\A\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dev\\pdf_render-1.4.0\\android\\.cxx\\Debug\\17c555j6\\x86_64\u0027",
+    "file_": "C:\\Users\\A\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dev\\pdf_render-1.4.0\\android\\CMakeLists.txt",
+    "tag_": "debug|x86_64",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 1194855684
+  },
+  {
+    "level_": 0,
+    "message_": "created folder \u0027C:\\Users\\A\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dev\\pdf_render-1.4.0\\android\\.cxx\\Debug\\17c555j6\\x86_64\u0027",
+    "file_": "C:\\Users\\A\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dev\\pdf_render-1.4.0\\android\\CMakeLists.txt",
+    "tag_": "debug|x86_64",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": -1569154288
+  },
+  {
+    "level_": 0,
+    "message_": "executing cmake Executable : C:\\Users\\A\\AppData\\Local\\Android\\sdk\\cmake\\3.18.1\\bin\\cmake.exe\narguments : \n-HC:\\Users\\A\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dev\\pdf_render-1.4.0\\android\n-DCMAKE_SYSTEM_NAME\u003dAndroid\n-DCMAKE_EXPORT_COMPILE_COMMANDS\u003dON\n-DCMAKE_SYSTEM_VERSION\u003d21\n-DANDROID_PLATFORM\u003dandroid-21\n-DANDROID_ABI\u003dx86_64\n-DCMAKE_ANDROID_ARCH_ABI\u003dx86_64\n-DANDROID_NDK\u003dC:\\Users\\A\\AppData\\Local\\Android\\sdk\\ndk\\21.4.7075529\n-DCMAKE_ANDROID_NDK\u003dC:\\Users\\A\\AppData\\Local\\Android\\sdk\\ndk\\21.4.7075529\n-DCMAKE_TOOLCHAIN_FILE\u003dC:\\Users\\A\\AppData\\Local\\Android\\sdk\\ndk\\21.4.7075529\\build\\cmake\\android.toolchain.cmake\n-DCMAKE_MAKE_PROGRAM\u003dC:\\Users\\A\\AppData\\Local\\Android\\sdk\\cmake\\3.18.1\\bin\\ninja.exe\n-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003dG:\\Projects\\andriod projects\\mebook_\\build\\pdf_render\\intermediates\\cxx\\Debug\\17c555j6\\obj\\x86_64\n-DCMAKE_RUNTIME_OUTPUT_DIRECTORY\u003dG:\\Projects\\andriod projects\\mebook_\\build\\pdf_render\\intermediates\\cxx\\Debug\\17c555j6\\obj\\x86_64\n-DCMAKE_BUILD_TYPE\u003dDebug\n-BC:\\Users\\A\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dev\\pdf_render-1.4.0\\android\\.cxx\\Debug\\17c555j6\\x86_64\n-GNinja\njvmArgs : \n\n",
+    "file_": "C:\\Users\\A\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dev\\pdf_render-1.4.0\\android\\CMakeLists.txt",
+    "tag_": "debug|x86_64",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 1069641916
+  },
+  {
+    "level_": 0,
+    "message_": "Executable : C:\\Users\\A\\AppData\\Local\\Android\\sdk\\cmake\\3.18.1\\bin\\cmake.exe\narguments : \n-HC:\\Users\\A\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dev\\pdf_render-1.4.0\\android\n-DCMAKE_SYSTEM_NAME\u003dAndroid\n-DCMAKE_EXPORT_COMPILE_COMMANDS\u003dON\n-DCMAKE_SYSTEM_VERSION\u003d21\n-DANDROID_PLATFORM\u003dandroid-21\n-DANDROID_ABI\u003dx86_64\n-DCMAKE_ANDROID_ARCH_ABI\u003dx86_64\n-DANDROID_NDK\u003dC:\\Users\\A\\AppData\\Local\\Android\\sdk\\ndk\\21.4.7075529\n-DCMAKE_ANDROID_NDK\u003dC:\\Users\\A\\AppData\\Local\\Android\\sdk\\ndk\\21.4.7075529\n-DCMAKE_TOOLCHAIN_FILE\u003dC:\\Users\\A\\AppData\\Local\\Android\\sdk\\ndk\\21.4.7075529\\build\\cmake\\android.toolchain.cmake\n-DCMAKE_MAKE_PROGRAM\u003dC:\\Users\\A\\AppData\\Local\\Android\\sdk\\cmake\\3.18.1\\bin\\ninja.exe\n-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003dG:\\Projects\\andriod projects\\mebook_\\build\\pdf_render\\intermediates\\cxx\\Debug\\17c555j6\\obj\\x86_64\n-DCMAKE_RUNTIME_OUTPUT_DIRECTORY\u003dG:\\Projects\\andriod projects\\mebook_\\build\\pdf_render\\intermediates\\cxx\\Debug\\17c555j6\\obj\\x86_64\n-DCMAKE_BUILD_TYPE\u003dDebug\n-BC:\\Users\\A\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dev\\pdf_render-1.4.0\\android\\.cxx\\Debug\\17c555j6\\x86_64\n-GNinja\njvmArgs : \n\n",
+    "file_": "C:\\Users\\A\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dev\\pdf_render-1.4.0\\android\\CMakeLists.txt",
+    "tag_": "debug|x86_64",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 1825060603
+  },
+  {
+    "level_": 0,
+    "message_": "Exiting generation of C:\\Users\\A\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dev\\pdf_render-1.4.0\\android\\.cxx\\Debug\\17c555j6\\x86_64\\compile_commands.json.bin normally",
+    "file_": "C:\\Users\\A\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dev\\pdf_render-1.4.0\\android\\CMakeLists.txt",
+    "tag_": "debug|x86_64",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 998270758
+  },
+  {
+    "level_": 0,
+    "message_": "done executing cmake",
+    "file_": "C:\\Users\\A\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dev\\pdf_render-1.4.0\\android\\CMakeLists.txt",
+    "tag_": "debug|x86_64",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 573877276
+  },
+  {
+    "level_": 0,
+    "message_": "write command file C:\\Users\\A\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dev\\pdf_render-1.4.0\\android\\.cxx\\Debug\\17c555j6\\x86_64\\metadata_generation_command.txt",
+    "file_": "C:\\Users\\A\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dev\\pdf_render-1.4.0\\android\\CMakeLists.txt",
+    "tag_": "debug|x86_64",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 1961018262
+  },
+  {
+    "level_": 0,
+    "message_": "JSON generation completed without problems",
+    "file_": "C:\\Users\\A\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dev\\pdf_render-1.4.0\\android\\CMakeLists.txt",
+    "tag_": "debug|x86_64",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": -1783016936
+  }
+]

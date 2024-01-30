@@ -6,11 +6,14 @@ import 'package:floating_navbar/floating_navbar.dart';
 import 'package:floating_navbar/floating_navbar_item.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:mebook/screens/settings.dart';
 import 'package:mebook/services/json_parser.dart';
 
 import '../../constants.dart';
 import '../services/api_handler.dart';
 import '../services/book_json_parser.dart';
+import '../util/router.dart';
+import 'bookShelf.dart';
 import 'components/appbar.dart';
 import 'components/chips.dart';
 import 'components/header_with_searchbar.dart';
@@ -210,54 +213,6 @@ class _HomeScreenState extends State<HomeScreen> {
               // RecomendsBooks(),
               // SizedBox(height: 60)
             ],
-          ),
-        ),
-      ),
-      // extendBody: true,
-      bottomNavigationBar: Container(
-        decoration: BoxDecoration(
-          color: Colors.white, // Adjust this to match your design
-          // boxShadow: [
-          //   BoxShadow(
-          //     blurRadius: 20,
-          //     color: Colors.black.withOpacity(0.1),
-          //   ),
-          // ],
-        ),
-        child: SafeArea(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 8),
-            child: GNav(
-              gap: 8,
-              activeColor: Color(0xff9d9686),
-              iconSize: 34,
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-              duration: Duration(milliseconds: 500),
-              tabBackgroundColor: Color(0xffe4e0cf),
-              tabs: [
-                GButton(
-                  icon: Icons.home,
-                  iconColor: Color(0xff9d9686),
-                  text: 'Home',
-                ),
-                GButton(
-                  icon: Icons.book_rounded,
-                  text: 'Favorites',
-                  iconColor: Color(0xff9d9686),
-                ),
-                GButton(
-                  icon: Icons.settings,
-                  text: 'Settings',
-                  iconColor: Color(0xff9d9686),
-                ),
-              ],
-              selectedIndex: _selectedIndex,
-              onTabChange: (index) {
-                setState(() {
-                  _selectedIndex = index;
-                });
-              },
-            ),
           ),
         ),
       ),
