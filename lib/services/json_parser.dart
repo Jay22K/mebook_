@@ -100,33 +100,3 @@ class Book {
         "year": year,
     };
 }
-
-// enum Language { RUSSIAN, ENGLISH }
-
-// final languageValues = EnumValues({
-//     "English": Language.ENGLISH,
-//     "Russian": Language.RUSSIAN
-// });
-
-// enum Type { RAR, DJVU, PDF, CHM }
-
-// final typeValues = EnumValues({
-//     "chm": Type.CHM,
-//     "djvu": Type.DJVU,
-//     "pdf": Type.PDF,
-//     "rar": Type.RAR
-// });
-
-// class EnumValues<T> {
-//     Map<String, T> map;
-//     Map<T, String> reverseMap;
-
-//     EnumValues(this.map);
-
-//     Map<T, String> get reverse {
-//         if (reverseMap == null) {
-//             reverseMap = map.map((k, v) => new MapEntry(v, k));
-//         }
-//         return reverseMap;
-//     }
-// }

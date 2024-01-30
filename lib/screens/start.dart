@@ -5,6 +5,8 @@ import 'package:mebook/constants.dart';
 import 'package:mebook/screens/home.dart';
 import 'package:mebook/util/router.dart';
 
+import 'dashboard.dart';
+
 class Start extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -56,7 +58,7 @@ class Start extends StatelessWidget {
                 shape: RoundedRectangleBorder(
                     borderRadius: new BorderRadius.circular(40)),
                 onPressed: () {
-                  MyRouter.pushPageReplacement(context, HomeScreen());
+                  MyRouter.pushPageReplacement(context, DashboardScreen());
                 },
                 child: Text(
                   "Start reading",

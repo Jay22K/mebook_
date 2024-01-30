@@ -141,12 +141,40 @@ class BookCard extends StatelessWidget {
             child: Container(
               width: 130,
               height: 185, // Height of the image
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: NetworkImage(image),
-                  fit: BoxFit.fill,
-                ),
-                borderRadius: BorderRadius.circular(7),
+              child: Stack(
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: NetworkImage(image),
+                        fit: BoxFit.fill,
+                      ),
+                      borderRadius: BorderRadius.circular(7),
+                    ),
+                  ),
+                  Positioned(
+                    top: 0,
+                    left: 0,
+                    child: Container(
+                      padding: EdgeInsets.symmetric(horizontal: 6, vertical: 3),
+                      decoration: BoxDecoration(
+                        color: Colors.black,
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(7),
+                          bottomRight: Radius.circular(10),
+                        ),
+                      ),
+                      child: Text(
+                        type,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 12,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
           ),
