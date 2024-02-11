@@ -136,7 +136,7 @@ class _TopicSelectionScreenState extends State<TopicSelectionScreen> {
                 child: Text(
                   'Submit',
                   style: TextStyle(
-                      fontSize: 18,
+                      fontSize: 24,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
                       fontFamily: 'Utopia'),

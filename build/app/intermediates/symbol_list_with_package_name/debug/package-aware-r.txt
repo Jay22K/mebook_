@@ -173,6 +173,7 @@ id time
 id title
 id view_tree_lifecycle_owner
 integer cancel_button_image_alpha
+integer google_play_services_version
 integer status_bar_notification_info_maxnum
 layout custom_dialog
 layout notification_action
@@ -194,6 +195,8 @@ layout toast_custom
 menu example_menu
 menu example_menu2
 mipmap ic_launcher
+raw firebase_common_keep
+string common_google_play_services_unknown_issue
 string status_bar_notification_info_overflow
 style LaunchTheme
 style NormalTheme

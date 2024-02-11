@@ -4,7 +4,7 @@
     "type": "PACKAGED_MANIFESTS",
     "kind": "Directory"
   },
-  "applicationId": "com.example.mebook",
+  "applicationId": "com.jayesh.mebook",
   "variantName": "debug",
   "elements": [
     {

@@ -1,6 +1,6 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-3    package="com.example.mebook"
+3    package="com.jayesh.mebook"
 4    android:versionCode="1"
 5    android:versionName="1.0.0" >
 6
@@ -89,62 +89,105 @@
 65            android:name="flutterEmbedding"
 66            android:value="2" />
 67
-68        <receiver
-68-->[:flutter_local_notifications] G:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:16:9-18:40
-69            android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver"
-69-->[:flutter_local_notifications] G:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:17:13-97
-70            android:exported="false" />
-70-->[:flutter_local_notifications] G:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:18:13-37
-71        <receiver
-71-->[:flutter_local_notifications] G:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:19:9-28:20
-72            android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationBootReceiver"
-72-->[:flutter_local_notifications] G:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:20:13-101
-73            android:exported="false" >
-73-->[:flutter_local_notifications] G:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:21:13-37
-74            <intent-filter>
-74-->[:flutter_local_notifications] G:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:22:13-27:29
-75                <action android:name="android.intent.action.BOOT_COMPLETED" />
-75-->[:flutter_local_notifications] G:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:23:17-79
-75-->[:flutter_local_notifications] G:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:23:25-76
-76                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
-76-->[:flutter_local_notifications] G:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:24:17-84
-76-->[:flutter_local_notifications] G:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:24:25-81
-77                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
-77-->[:flutter_local_notifications] G:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:25:17-82
-77-->[:flutter_local_notifications] G:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:25:25-79
-78                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON" />
-78-->[:flutter_local_notifications] G:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:26:17-82
-78-->[:flutter_local_notifications] G:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:26:25-79
-79            </intent-filter>
-80        </receiver> <!-- 1. 在AndroidManifest.xml中增加内核首次加载时优化Service声明。 -->
-81        <!-- 2. 该Service仅在TBS内核首次Dex加载时触发并执行dex2oat任务，任务完成后自动结束。 -->
-82        <service
-82-->[:flutter_file_view] G:\Projects\andriod projects\mebook_\build\flutter_file_view\intermediates\merged_manifest\debug\AndroidManifest.xml:23:9-26:41
-83            android:name="com.tencent.smtt.export.external.DexClassLoaderProviderService"
-83-->[:flutter_file_view] G:\Projects\andriod projects\mebook_\build\flutter_file_view\intermediates\merged_manifest\debug\AndroidManifest.xml:24:13-90
-84            android:label="dexopt"
-84-->[:flutter_file_view] G:\Projects\andriod projects\mebook_\build\flutter_file_view\intermediates\merged_manifest\debug\AndroidManifest.xml:25:13-35
-85            android:process=":dexopt" /> <!-- https://x5.tencent.com/docs/questions.html 问题3.6解决方案 -->
-85-->[:flutter_file_view] G:\Projects\andriod projects\mebook_\build\flutter_file_view\intermediates\merged_manifest\debug\AndroidManifest.xml:26:13-38
-86        <!-- 在Android P机型遇到org.apache包名找不到的crash -->
-87        <uses-library
-87-->[:flutter_file_view] G:\Projects\andriod projects\mebook_\build\flutter_file_view\intermediates\merged_manifest\debug\AndroidManifest.xml:30:9-32:40
-88            android:name="org.apache.http.legacy"
-88-->[:flutter_file_view] G:\Projects\andriod projects\mebook_\build\flutter_file_view\intermediates\merged_manifest\debug\AndroidManifest.xml:31:13-50
-89            android:required="false" />
-89-->[:flutter_file_view] G:\Projects\andriod projects\mebook_\build\flutter_file_view\intermediates\merged_manifest\debug\AndroidManifest.xml:32:13-37
-90        <uses-library
-90-->[androidx.window:window:1.0.0-beta04] C:\Users\A\.gradle\caches\transforms-3\49bc944d29f70d45aa5add8e43e3247e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:25:9-27:40
-91            android:name="androidx.window.extensions"
-91-->[androidx.window:window:1.0.0-beta04] C:\Users\A\.gradle\caches\transforms-3\49bc944d29f70d45aa5add8e43e3247e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:26:13-54
-92            android:required="false" />
-92-->[androidx.window:window:1.0.0-beta04] C:\Users\A\.gradle\caches\transforms-3\49bc944d29f70d45aa5add8e43e3247e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:27:13-37
-93        <uses-library
-93-->[androidx.window:window:1.0.0-beta04] C:\Users\A\.gradle\caches\transforms-3\49bc944d29f70d45aa5add8e43e3247e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:28:9-30:40
-94            android:name="androidx.window.sidecar"
-94-->[androidx.window:window:1.0.0-beta04] C:\Users\A\.gradle\caches\transforms-3\49bc944d29f70d45aa5add8e43e3247e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:29:13-51
-95            android:required="false" />
-95-->[androidx.window:window:1.0.0-beta04] C:\Users\A\.gradle\caches\transforms-3\49bc944d29f70d45aa5add8e43e3247e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:30:13-37
-96    </application>
-97
-98</manifest>
+68        <service
+68-->[:firebase_core] G:\Projects\andriod projects\mebook_\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-14:19
+69            android:name="com.google.firebase.components.ComponentDiscoveryService"
+69-->[:firebase_core] G:\Projects\andriod projects\mebook_\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:10:18-89
+70            android:directBootAware="true"
+70-->[com.google.firebase:firebase-common:20.4.2] C:\Users\A\.gradle\caches\transforms-3\2a3aeb616ac67310d980565c553cc715\transformed\jetified-firebase-common-20.4.2\AndroidManifest.xml:32:13-43
+71            android:exported="false" >
+71-->[com.google.firebase:firebase-common:20.4.2] C:\Users\A\.gradle\caches\transforms-3\2a3aeb616ac67310d980565c553cc715\transformed\jetified-firebase-common-20.4.2\AndroidManifest.xml:33:13-37
+72            <meta-data
+72-->[:firebase_core] G:\Projects\andriod projects\mebook_\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
+73                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
+73-->[:firebase_core] G:\Projects\andriod projects\mebook_\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-124
+74                android:value="com.google.firebase.components.ComponentRegistrar" />
+74-->[:firebase_core] G:\Projects\andriod projects\mebook_\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
+75            <meta-data
+75-->[com.google.firebase:firebase-common:20.4.2] C:\Users\A\.gradle\caches\transforms-3\2a3aeb616ac67310d980565c553cc715\transformed\jetified-firebase-common-20.4.2\AndroidManifest.xml:35:13-37:85
+76                android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
+76-->[com.google.firebase:firebase-common:20.4.2] C:\Users\A\.gradle\caches\transforms-3\2a3aeb616ac67310d980565c553cc715\transformed\jetified-firebase-common-20.4.2\AndroidManifest.xml:36:17-109
+77                android:value="com.google.firebase.components.ComponentRegistrar" />
+77-->[com.google.firebase:firebase-common:20.4.2] C:\Users\A\.gradle\caches\transforms-3\2a3aeb616ac67310d980565c553cc715\transformed\jetified-firebase-common-20.4.2\AndroidManifest.xml:37:17-82
+78        </service>
+79
+80        <receiver
+80-->[:flutter_local_notifications] G:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:16:9-18:40
+81            android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver"
+81-->[:flutter_local_notifications] G:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:17:13-97
+82            android:exported="false" />
+82-->[:flutter_local_notifications] G:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:18:13-37
+83        <receiver
+83-->[:flutter_local_notifications] G:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:19:9-28:20
+84            android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationBootReceiver"
+84-->[:flutter_local_notifications] G:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:20:13-101
+85            android:exported="false" >
+85-->[:flutter_local_notifications] G:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:21:13-37
+86            <intent-filter>
+86-->[:flutter_local_notifications] G:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:22:13-27:29
+87                <action android:name="android.intent.action.BOOT_COMPLETED" />
+87-->[:flutter_local_notifications] G:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:23:17-79
+87-->[:flutter_local_notifications] G:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:23:25-76
+88                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+88-->[:flutter_local_notifications] G:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:24:17-84
+88-->[:flutter_local_notifications] G:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:24:25-81
+89                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+89-->[:flutter_local_notifications] G:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:25:17-82
+89-->[:flutter_local_notifications] G:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:25:25-79
+90                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON" />
+90-->[:flutter_local_notifications] G:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:26:17-82
+90-->[:flutter_local_notifications] G:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:26:25-79
+91            </intent-filter>
+92        </receiver> <!-- 1. 在AndroidManifest.xml中增加内核首次加载时优化Service声明。 -->
+93        <!-- 2. 该Service仅在TBS内核首次Dex加载时触发并执行dex2oat任务，任务完成后自动结束。 -->
+94        <service
+94-->[:flutter_file_view] G:\Projects\andriod projects\mebook_\build\flutter_file_view\intermediates\merged_manifest\debug\AndroidManifest.xml:23:9-26:41
+95            android:name="com.tencent.smtt.export.external.DexClassLoaderProviderService"
+95-->[:flutter_file_view] G:\Projects\andriod projects\mebook_\build\flutter_file_view\intermediates\merged_manifest\debug\AndroidManifest.xml:24:13-90
+96            android:label="dexopt"
+96-->[:flutter_file_view] G:\Projects\andriod projects\mebook_\build\flutter_file_view\intermediates\merged_manifest\debug\AndroidManifest.xml:25:13-35
+97            android:process=":dexopt" /> <!-- https://x5.tencent.com/docs/questions.html 问题3.6解决方案 -->
+97-->[:flutter_file_view] G:\Projects\andriod projects\mebook_\build\flutter_file_view\intermediates\merged_manifest\debug\AndroidManifest.xml:26:13-38
+98        <!-- 在Android P机型遇到org.apache包名找不到的crash -->
+99        <uses-library
+99-->[:flutter_file_view] G:\Projects\andriod projects\mebook_\build\flutter_file_view\intermediates\merged_manifest\debug\AndroidManifest.xml:30:9-32:40
+100            android:name="org.apache.http.legacy"
+100-->[:flutter_file_view] G:\Projects\andriod projects\mebook_\build\flutter_file_view\intermediates\merged_manifest\debug\AndroidManifest.xml:31:13-50
+101            android:required="false" />
+101-->[:flutter_file_view] G:\Projects\andriod projects\mebook_\build\flutter_file_view\intermediates\merged_manifest\debug\AndroidManifest.xml:32:13-37
+102
+103        <provider
+103-->[com.google.firebase:firebase-common:20.4.2] C:\Users\A\.gradle\caches\transforms-3\2a3aeb616ac67310d980565c553cc715\transformed\jetified-firebase-common-20.4.2\AndroidManifest.xml:23:9-28:39
+104            android:name="com.google.firebase.provider.FirebaseInitProvider"
+104-->[com.google.firebase:firebase-common:20.4.2] C:\Users\A\.gradle\caches\transforms-3\2a3aeb616ac67310d980565c553cc715\transformed\jetified-firebase-common-20.4.2\AndroidManifest.xml:24:13-77
+105            android:authorities="com.jayesh.mebook.firebaseinitprovider"
+105-->[com.google.firebase:firebase-common:20.4.2] C:\Users\A\.gradle\caches\transforms-3\2a3aeb616ac67310d980565c553cc715\transformed\jetified-firebase-common-20.4.2\AndroidManifest.xml:25:13-72
+106            android:directBootAware="true"
+106-->[com.google.firebase:firebase-common:20.4.2] C:\Users\A\.gradle\caches\transforms-3\2a3aeb616ac67310d980565c553cc715\transformed\jetified-firebase-common-20.4.2\AndroidManifest.xml:26:13-43
+107            android:exported="false"
+107-->[com.google.firebase:firebase-common:20.4.2] C:\Users\A\.gradle\caches\transforms-3\2a3aeb616ac67310d980565c553cc715\transformed\jetified-firebase-common-20.4.2\AndroidManifest.xml:27:13-37
+108            android:initOrder="100" />
+108-->[com.google.firebase:firebase-common:20.4.2] C:\Users\A\.gradle\caches\transforms-3\2a3aeb616ac67310d980565c553cc715\transformed\jetified-firebase-common-20.4.2\AndroidManifest.xml:28:13-36
+109
+110        <uses-library
+110-->[androidx.window:window:1.0.0-beta04] C:\Users\A\.gradle\caches\transforms-3\49bc944d29f70d45aa5add8e43e3247e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:25:9-27:40
+111            android:name="androidx.window.extensions"
+111-->[androidx.window:window:1.0.0-beta04] C:\Users\A\.gradle\caches\transforms-3\49bc944d29f70d45aa5add8e43e3247e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:26:13-54
+112            android:required="false" />
+112-->[androidx.window:window:1.0.0-beta04] C:\Users\A\.gradle\caches\transforms-3\49bc944d29f70d45aa5add8e43e3247e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:27:13-37
+113        <uses-library
+113-->[androidx.window:window:1.0.0-beta04] C:\Users\A\.gradle\caches\transforms-3\49bc944d29f70d45aa5add8e43e3247e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:28:9-30:40
+114            android:name="androidx.window.sidecar"
+114-->[androidx.window:window:1.0.0-beta04] C:\Users\A\.gradle\caches\transforms-3\49bc944d29f70d45aa5add8e43e3247e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:29:13-51
+115            android:required="false" />
+115-->[androidx.window:window:1.0.0-beta04] C:\Users\A\.gradle\caches\transforms-3\49bc944d29f70d45aa5add8e43e3247e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:30:13-37
+116
+117        <meta-data
+117-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\A\.gradle\caches\transforms-3\6b0daa5fb4c2eb7e8b55778df9b972f6\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:21:9-23:69
+118            android:name="com.google.android.gms.version"
+118-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\A\.gradle\caches\transforms-3\6b0daa5fb4c2eb7e8b55778df9b972f6\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:22:13-58
+119            android:value="@integer/google_play_services_version" />
+119-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\A\.gradle\caches\transforms-3\6b0daa5fb4c2eb7e8b55778df9b972f6\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:23:13-66
+120    </application>
+121
+122</manifest>

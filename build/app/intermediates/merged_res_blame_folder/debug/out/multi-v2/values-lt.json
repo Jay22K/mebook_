@@ -4,6 +4,23 @@
             "outputFile": "G:\\Projects\\andriod projects\\mebook_\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-lt\\values-lt.xml",
             "map": [
                 {
+                    "source": "C:\\Users\\A\\.gradle\\caches\\transforms-3\\6b0daa5fb4c2eb7e8b55778df9b972f6\\transformed\\jetified-play-services-basement-18.1.0\\res\\values-lt\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "195",
+                        "endColumns": "154",
+                        "endOffsets": "349"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "158",
+                        "endOffsets": "209"
+                    }
+                },
+                {
                     "source": "C:\\Users\\A\\.gradle\\caches\\transforms-3\\5e083c06c9925c2309f02468fc66e376\\transformed\\core-1.7.0\\res\\values-lt\\values-lt.xml",
                     "from": {
                         "startLines": "2",
@@ -11,6 +28,13 @@
                         "startOffsets": "55",
                         "endColumns": "100",
                         "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "214",
+                        "endColumns": "100",
+                        "endOffsets": "310"
                     }
                 }
             ]
