@@ -3,6 +3,7 @@ import 'package:lottie/lottie.dart';
 import 'package:mebook/constants.dart';
 
 import 'package:mebook/screens/home.dart';
+import 'package:mebook/screens/selectTopic.dart';
 import 'package:mebook/util/router.dart';
 
 import 'dashboard.dart';
@@ -58,7 +59,9 @@ class Start extends StatelessWidget {
                 shape: RoundedRectangleBorder(
                     borderRadius: new BorderRadius.circular(40)),
                 onPressed: () {
-                  MyRouter.pushPageReplacement(context, DashboardScreen());
+                  //TODO: repleace to push page replesment
+                  MyRouter.pushPage(context, TopicSelectionScreen());
+                  // MyRouter.pushPageReplacement(context, DashboardScreen());
                 },
                 child: Text(
                   "Start reading",
