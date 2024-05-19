@@ -13,38 +13,38 @@
 13         to allow setting breakpoints, to provide hot reload, etc.
 14    -->
 15    <uses-permission android:name="android.permission.INTERNET" />
-15-->G:\Projects\andriod projects\mebook_\android\app\src\main\AndroidManifest.xml:2:2-64
-15-->G:\Projects\andriod projects\mebook_\android\app\src\main\AndroidManifest.xml:2:19-61
+15-->D:\Projects\andriod projects\mebook_\android\app\src\main\AndroidManifest.xml:2:2-64
+15-->D:\Projects\andriod projects\mebook_\android\app\src\main\AndroidManifest.xml:2:19-61
 16    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-16-->G:\Projects\andriod projects\mebook_\android\app\src\main\AndroidManifest.xml:3:2-78
-16-->G:\Projects\andriod projects\mebook_\android\app\src\main\AndroidManifest.xml:3:19-75
+16-->D:\Projects\andriod projects\mebook_\android\app\src\main\AndroidManifest.xml:3:2-78
+16-->D:\Projects\andriod projects\mebook_\android\app\src\main\AndroidManifest.xml:3:19-75
 17    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-17-->G:\Projects\andriod projects\mebook_\android\app\src\main\AndroidManifest.xml:4:2-77
-17-->G:\Projects\andriod projects\mebook_\android\app\src\main\AndroidManifest.xml:4:19-74
+17-->D:\Projects\andriod projects\mebook_\android\app\src\main\AndroidManifest.xml:4:2-77
+17-->D:\Projects\andriod projects\mebook_\android\app\src\main\AndroidManifest.xml:4:19-74
 18    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
-18-->G:\Projects\andriod projects\mebook_\android\app\src\main\AndroidManifest.xml:5:2-79
-18-->G:\Projects\andriod projects\mebook_\android\app\src\main\AndroidManifest.xml:5:19-76
+18-->D:\Projects\andriod projects\mebook_\android\app\src\main\AndroidManifest.xml:5:2-79
+18-->D:\Projects\andriod projects\mebook_\android\app\src\main\AndroidManifest.xml:5:19-76
 19    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-19-->[:flutter_local_notifications] G:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-81
-19-->[:flutter_local_notifications] G:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:9:22-78
+19-->[:flutter_local_notifications] D:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-81
+19-->[:flutter_local_notifications] D:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:9:22-78
 20    <uses-permission android:name="android.permission.VIBRATE" />
-20-->[:flutter_local_notifications] G:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:10:5-66
-20-->[:flutter_local_notifications] G:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:10:22-63
+20-->[:flutter_local_notifications] D:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:10:5-66
+20-->[:flutter_local_notifications] D:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:10:22-63
 21    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
-21-->[:flutter_local_notifications] G:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:11:5-81
-21-->[:flutter_local_notifications] G:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:11:22-78
+21-->[:flutter_local_notifications] D:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:11:5-81
+21-->[:flutter_local_notifications] D:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:11:22-78
 22    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
-22-->[:flutter_local_notifications] G:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:12:5-79
-22-->[:flutter_local_notifications] G:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:12:22-76
+22-->[:flutter_local_notifications] D:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:12:5-79
+22-->[:flutter_local_notifications] D:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:12:22-76
 23    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" /> <!-- 允许程序访问有关GSM网络信息 -->
-23-->[:flutter_local_notifications] G:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:13:5-77
-23-->[:flutter_local_notifications] G:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:13:22-74
+23-->[:flutter_local_notifications] D:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:13:5-77
+23-->[:flutter_local_notifications] D:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:13:22-74
 24    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 允许程序写入设置 -->
-24-->[:flutter_file_view] G:\Projects\andriod projects\mebook_\build\flutter_file_view\intermediates\merged_manifest\debug\AndroidManifest.xml:13:5-79
-24-->[:flutter_file_view] G:\Projects\andriod projects\mebook_\build\flutter_file_view\intermediates\merged_manifest\debug\AndroidManifest.xml:13:22-76
+24-->[:flutter_file_view] D:\Projects\andriod projects\mebook_\build\flutter_file_view\intermediates\merged_manifest\debug\AndroidManifest.xml:13:5-79
+24-->[:flutter_file_view] D:\Projects\andriod projects\mebook_\build\flutter_file_view\intermediates\merged_manifest\debug\AndroidManifest.xml:13:22-76
 25    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
-25-->[:flutter_file_view] G:\Projects\andriod projects\mebook_\build\flutter_file_view\intermediates\merged_manifest\debug\AndroidManifest.xml:15:5-17:47
-25-->[:flutter_file_view] G:\Projects\andriod projects\mebook_\build\flutter_file_view\intermediates\merged_manifest\debug\AndroidManifest.xml:16:9-57
+25-->[:flutter_file_view] D:\Projects\andriod projects\mebook_\build\flutter_file_view\intermediates\merged_manifest\debug\AndroidManifest.xml:15:5-17:47
+25-->[:flutter_file_view] D:\Projects\andriod projects\mebook_\build\flutter_file_view\intermediates\merged_manifest\debug\AndroidManifest.xml:16:9-57
 26
 27    <application
 28        android:name="android.app.Application"
@@ -52,7 +52,7 @@
 29-->[androidx.core:core:1.7.0] C:\Users\A\.gradle\caches\transforms-3\5e083c06c9925c2309f02468fc66e376\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
 30        android:debuggable="true"
 31        android:hardwareAccelerated="true"
-31-->[:flutter_file_view] G:\Projects\andriod projects\mebook_\build\flutter_file_view\intermediates\merged_manifest\debug\AndroidManifest.xml:19:18-52
+31-->[:flutter_file_view] D:\Projects\andriod projects\mebook_\build\flutter_file_view\intermediates\merged_manifest\debug\AndroidManifest.xml:19:18-52
 32        android:icon="@mipmap/ic_launcher"
 33        android:label="mebook"
 34        android:requestLegacyExternalStorage="true" >
@@ -90,19 +90,19 @@
 66            android:value="2" />
 67
 68        <service
-68-->[:firebase_core] G:\Projects\andriod projects\mebook_\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-14:19
+68-->[:firebase_core] D:\Projects\andriod projects\mebook_\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-14:19
 69            android:name="com.google.firebase.components.ComponentDiscoveryService"
-69-->[:firebase_core] G:\Projects\andriod projects\mebook_\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:10:18-89
+69-->[:firebase_core] D:\Projects\andriod projects\mebook_\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:10:18-89
 70            android:directBootAware="true"
 70-->[com.google.firebase:firebase-common:20.4.2] C:\Users\A\.gradle\caches\transforms-3\2a3aeb616ac67310d980565c553cc715\transformed\jetified-firebase-common-20.4.2\AndroidManifest.xml:32:13-43
 71            android:exported="false" >
 71-->[com.google.firebase:firebase-common:20.4.2] C:\Users\A\.gradle\caches\transforms-3\2a3aeb616ac67310d980565c553cc715\transformed\jetified-firebase-common-20.4.2\AndroidManifest.xml:33:13-37
 72            <meta-data
-72-->[:firebase_core] G:\Projects\andriod projects\mebook_\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
+72-->[:firebase_core] D:\Projects\andriod projects\mebook_\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
 73                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
-73-->[:firebase_core] G:\Projects\andriod projects\mebook_\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-124
+73-->[:firebase_core] D:\Projects\andriod projects\mebook_\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-124
 74                android:value="com.google.firebase.components.ComponentRegistrar" />
-74-->[:firebase_core] G:\Projects\andriod projects\mebook_\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
+74-->[:firebase_core] D:\Projects\andriod projects\mebook_\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
 75            <meta-data
 75-->[com.google.firebase:firebase-common:20.4.2] C:\Users\A\.gradle\caches\transforms-3\2a3aeb616ac67310d980565c553cc715\transformed\jetified-firebase-common-20.4.2\AndroidManifest.xml:35:13-37:85
 76                android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
@@ -112,49 +112,49 @@
 78        </service>
 79
 80        <receiver
-80-->[:flutter_local_notifications] G:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:16:9-18:40
+80-->[:flutter_local_notifications] D:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:16:9-18:40
 81            android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver"
-81-->[:flutter_local_notifications] G:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:17:13-97
+81-->[:flutter_local_notifications] D:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:17:13-97
 82            android:exported="false" />
-82-->[:flutter_local_notifications] G:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:18:13-37
+82-->[:flutter_local_notifications] D:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:18:13-37
 83        <receiver
-83-->[:flutter_local_notifications] G:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:19:9-28:20
+83-->[:flutter_local_notifications] D:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:19:9-28:20
 84            android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationBootReceiver"
-84-->[:flutter_local_notifications] G:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:20:13-101
+84-->[:flutter_local_notifications] D:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:20:13-101
 85            android:exported="false" >
-85-->[:flutter_local_notifications] G:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:21:13-37
+85-->[:flutter_local_notifications] D:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:21:13-37
 86            <intent-filter>
-86-->[:flutter_local_notifications] G:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:22:13-27:29
+86-->[:flutter_local_notifications] D:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:22:13-27:29
 87                <action android:name="android.intent.action.BOOT_COMPLETED" />
-87-->[:flutter_local_notifications] G:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:23:17-79
-87-->[:flutter_local_notifications] G:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:23:25-76
+87-->[:flutter_local_notifications] D:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:23:17-79
+87-->[:flutter_local_notifications] D:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:23:25-76
 88                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
-88-->[:flutter_local_notifications] G:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:24:17-84
-88-->[:flutter_local_notifications] G:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:24:25-81
+88-->[:flutter_local_notifications] D:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:24:17-84
+88-->[:flutter_local_notifications] D:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:24:25-81
 89                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
-89-->[:flutter_local_notifications] G:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:25:17-82
-89-->[:flutter_local_notifications] G:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:25:25-79
+89-->[:flutter_local_notifications] D:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:25:17-82
+89-->[:flutter_local_notifications] D:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:25:25-79
 90                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON" />
-90-->[:flutter_local_notifications] G:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:26:17-82
-90-->[:flutter_local_notifications] G:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:26:25-79
+90-->[:flutter_local_notifications] D:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:26:17-82
+90-->[:flutter_local_notifications] D:\Projects\andriod projects\mebook_\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:26:25-79
 91            </intent-filter>
 92        </receiver> <!-- 1. 在AndroidManifest.xml中增加内核首次加载时优化Service声明。 -->
 93        <!-- 2. 该Service仅在TBS内核首次Dex加载时触发并执行dex2oat任务，任务完成后自动结束。 -->
 94        <service
-94-->[:flutter_file_view] G:\Projects\andriod projects\mebook_\build\flutter_file_view\intermediates\merged_manifest\debug\AndroidManifest.xml:23:9-26:41
+94-->[:flutter_file_view] D:\Projects\andriod projects\mebook_\build\flutter_file_view\intermediates\merged_manifest\debug\AndroidManifest.xml:23:9-26:41
 95            android:name="com.tencent.smtt.export.external.DexClassLoaderProviderService"
-95-->[:flutter_file_view] G:\Projects\andriod projects\mebook_\build\flutter_file_view\intermediates\merged_manifest\debug\AndroidManifest.xml:24:13-90
+95-->[:flutter_file_view] D:\Projects\andriod projects\mebook_\build\flutter_file_view\intermediates\merged_manifest\debug\AndroidManifest.xml:24:13-90
 96            android:label="dexopt"
-96-->[:flutter_file_view] G:\Projects\andriod projects\mebook_\build\flutter_file_view\intermediates\merged_manifest\debug\AndroidManifest.xml:25:13-35
+96-->[:flutter_file_view] D:\Projects\andriod projects\mebook_\build\flutter_file_view\intermediates\merged_manifest\debug\AndroidManifest.xml:25:13-35
 97            android:process=":dexopt" /> <!-- https://x5.tencent.com/docs/questions.html 问题3.6解决方案 -->
-97-->[:flutter_file_view] G:\Projects\andriod projects\mebook_\build\flutter_file_view\intermediates\merged_manifest\debug\AndroidManifest.xml:26:13-38
+97-->[:flutter_file_view] D:\Projects\andriod projects\mebook_\build\flutter_file_view\intermediates\merged_manifest\debug\AndroidManifest.xml:26:13-38
 98        <!-- 在Android P机型遇到org.apache包名找不到的crash -->
 99        <uses-library
-99-->[:flutter_file_view] G:\Projects\andriod projects\mebook_\build\flutter_file_view\intermediates\merged_manifest\debug\AndroidManifest.xml:30:9-32:40
+99-->[:flutter_file_view] D:\Projects\andriod projects\mebook_\build\flutter_file_view\intermediates\merged_manifest\debug\AndroidManifest.xml:30:9-32:40
 100            android:name="org.apache.http.legacy"
-100-->[:flutter_file_view] G:\Projects\andriod projects\mebook_\build\flutter_file_view\intermediates\merged_manifest\debug\AndroidManifest.xml:31:13-50
+100-->[:flutter_file_view] D:\Projects\andriod projects\mebook_\build\flutter_file_view\intermediates\merged_manifest\debug\AndroidManifest.xml:31:13-50
 101            android:required="false" />
-101-->[:flutter_file_view] G:\Projects\andriod projects\mebook_\build\flutter_file_view\intermediates\merged_manifest\debug\AndroidManifest.xml:32:13-37
+101-->[:flutter_file_view] D:\Projects\andriod projects\mebook_\build\flutter_file_view\intermediates\merged_manifest\debug\AndroidManifest.xml:32:13-37
 102
 103        <provider
 103-->[com.google.firebase:firebase-common:20.4.2] C:\Users\A\.gradle\caches\transforms-3\2a3aeb616ac67310d980565c553cc715\transformed\jetified-firebase-common-20.4.2\AndroidManifest.xml:23:9-28:39

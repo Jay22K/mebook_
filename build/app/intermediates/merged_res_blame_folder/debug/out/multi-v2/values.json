@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "G:\\Projects\\andriod projects\\mebook_\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "D:\\Projects\\andriod projects\\mebook_\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
                     "source": "C:\\Users\\A\\.gradle\\caches\\transforms-3\\5e083c06c9925c2309f02468fc66e376\\transformed\\core-1.7.0\\res\\values\\values.xml",
@@ -95,7 +95,24 @@
                     }
                 },
                 {
-                    "source": "G:\\Projects\\andriod projects\\mebook_\\android\\app\\src\\main\\res\\values\\styles.xml",
+                    "source": "C:\\Users\\A\\.gradle\\caches\\transforms-3\\e0c414601472373f45eb984833a825a1\\transformed\\media-1.1.0\\res\\values\\values.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,144,215,288,341,394,447,500,560,626,748,809,875",
+                        "endColumns": "88,70,72,52,52,52,52,59,65,121,60,65,66",
+                        "endOffsets": "139,210,283,336,389,442,495,555,621,743,804,870,937"
+                    },
+                    "to": {
+                        "startLines": "15,16,17,40,41,42,43,99,117,119,120,125,127",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "793,882,953,2492,2545,2598,2651,5859,7090,7266,7388,7650,7845",
+                        "endColumns": "88,70,72,52,52,52,52,59,65,121,60,65,66",
+                        "endOffsets": "877,948,1021,2540,2593,2646,2699,5914,7151,7383,7444,7711,7907"
+                    }
+                },
+                {
+                    "source": "D:\\Projects\\andriod projects\\mebook_\\android\\app\\src\\main\\res\\values\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",
@@ -111,23 +128,6 @@
                         "endLines": "108,111",
                         "endColumns": "12,12",
                         "endOffsets": "6598,6767"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\A\\.gradle\\caches\\transforms-3\\e0c414601472373f45eb984833a825a1\\transformed\\media-1.1.0\\res\\values\\values.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,144,215,288,341,394,447,500,560,626,748,809,875",
-                        "endColumns": "88,70,72,52,52,52,52,59,65,121,60,65,66",
-                        "endOffsets": "139,210,283,336,389,442,495,555,621,743,804,870,937"
-                    },
-                    "to": {
-                        "startLines": "15,16,17,40,41,42,43,99,117,119,120,125,127",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "793,882,953,2492,2545,2598,2651,5859,7090,7266,7388,7650,7845",
-                        "endColumns": "88,70,72,52,52,52,52,59,65,121,60,65,66",
-                        "endOffsets": "877,948,1021,2540,2593,2646,2699,5914,7151,7383,7444,7711,7907"
                     }
                 }
             ]

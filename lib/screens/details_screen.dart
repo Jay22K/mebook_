@@ -175,6 +175,10 @@ class _DetailsScreenState extends State<DetailsScreen> {
           onPressed: () {
             // Handle FAB tap
 
+            String modifiedUrl =
+                downloadUrl!.replaceFirst("https://", "http://");
+            log(modifiedUrl);
+
             ToastShow(msg: 'Book is Downloading').showToast(context);
             FileDownloader.downloadFile(
                 url: downloadUrl!,

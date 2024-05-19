@@ -12,32 +12,34 @@ class TopicSelectionScreen extends StatefulWidget {
 }
 
 class _TopicSelectionScreenState extends State<TopicSelectionScreen> {
-  List<String> topics = [
-    "CS",
-    "Technology",
-    "Art",
+List<String> topics = [
+    "Geography",
     "Biology",
+    "Law",
+    "Literature",
+    "Physics",
+    "Technology",
+    "CS",
+    "Economy",
+    "Linguistics",
+    "Housekeeping, leisure",
+    "Education",
+    "Mathematics",
+    "Jurisprudence",
+    "Other Social Sciences",
+    "Geology",
+    "Religion",
+    "Psychology",
+    "Art",
+    "Science (General)",
     "Business",
     "Chemistry",
-    "Computers",
-    "Geography",
-    "Geology",
-    "Economy",
-    "Education",
-    "Jurisprudence",
-    "Housekeeping, leisure",
-    "History",
-    "Linguistics",
-    "Literature",
-    "Mathematics",
-    "Medicine",
-    "Other Social Sciences",
-    "Physics",
     "Physical Educ. and Sport",
-    "Psychology",
-    "Religion",
-    "Science (General)",
-  ];
+    "Computers",
+    "Medicine",
+    "History"
+];
+
 
   Set<String> selectedTopics = Set<String>();
 
