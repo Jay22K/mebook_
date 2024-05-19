@@ -4,6 +4,7 @@ import 'package:mebook/constants.dart';
 
 import 'package:mebook/screens/home.dart';
 import 'package:mebook/screens/selectTopic.dart';
+import 'package:mebook/screens/singup_screen.dart';
 import 'package:mebook/util/router.dart';
 
 import 'dashboard.dart';
@@ -60,11 +61,13 @@ class Start extends StatelessWidget {
                     borderRadius: new BorderRadius.circular(40)),
                 onPressed: () {
                   //TODO: repleace to push page replesment
-                  MyRouter.pushPage(context, TopicSelectionScreen());
+                  // MyRouter.pushPage(context, TopicSelectionScreen());
+                  MyRouter.pushPage(context, SignUpScreen());
+
                   // MyRouter.pushPageReplacement(context, DashboardScreen());
                 },
                 child: Text(
-                  "Start reading",
+                  "Start Reading",
                   style: TextStyle(
                       fontSize: 24,
                       color: kBackgroundColor,

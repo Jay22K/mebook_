@@ -48,17 +48,17 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions web = FirebaseOptions(
     apiKey: 'AIzaSyC5nUMplRghN2M5EHhfLgOlZah_zLuuNrc',
-    appId: '1:101611854024:web:3b30c5fe03e9238ef7adfd',
+    appId: '1:101611854024:web:78cfd7727f33b9eff7adfd',
     messagingSenderId: '101611854024',
     projectId: 'mebook-f79be',
     authDomain: 'mebook-f79be.firebaseapp.com',
     storageBucket: 'mebook-f79be.appspot.com',
-    measurementId: 'G-P3EL700EN6',
+    measurementId: 'G-HJGKRH3MEC',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyDJFQFXWvcqaVhWQwlYHNifTJkYi13JoZc',
-    appId: '1:101611854024:android:179b70841a623814f7adfd',
+    appId: '1:101611854024:android:52f90b50b2884d3ef7adfd',
     messagingSenderId: '101611854024',
     projectId: 'mebook-f79be',
     storageBucket: 'mebook-f79be.appspot.com',
@@ -66,10 +66,12 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyCG2y9R02ZgthhNaVLzFtyYSDce1M-Khg0',
-    appId: '1:101611854024:ios:2425fd7b8ec87db6f7adfd',
+    appId: '1:101611854024:ios:d177e8d3638eab5bf7adfd',
     messagingSenderId: '101611854024',
     projectId: 'mebook-f79be',
     storageBucket: 'mebook-f79be.appspot.com',
+    iosClientId: '101611854024-n7jv6614srte3mp9s41kmpmumckd12q0.apps.googleusercontent.com',
     iosBundleId: 'com.example.mebook',
   );
+
 }

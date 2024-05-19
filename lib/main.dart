@@ -1,5 +1,8 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:mebook/screens/singup_screen.dart';
 import 'package:mebook/util/storeageService.dart';
 
 
@@ -12,6 +15,7 @@ import 'screens/start.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+   await Firebase.initializeApp();
   final storageService = StorageService();
   runApp(MyApp());
 }

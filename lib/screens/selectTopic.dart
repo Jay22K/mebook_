@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 
 import '../constants.dart';
 import '../util/router.dart';
+import '../util/storeageService.dart';
+import 'components/snackBar.dart';
 import 'dashboard.dart';
 
 class TopicSelectionScreen extends StatefulWidget {
@@ -42,6 +44,9 @@ List<String> topics = [
 
 
   Set<String> selectedTopics = Set<String>();
+  final storageService = StorageService();
+
+    
 
   @override
   Widget build(BuildContext context) {
@@ -91,12 +96,7 @@ List<String> topics = [
                             selectedTopics.add(topic);
                           } else {
                             // Show a snackbar or alert that only 3 topics are allowed.
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(
-                                content:
-                                    Text('You can only select up to 3 topics.'),
-                              ),
-                            );
+                            showCustomSnackBar(context, 'You can only select up to 3 topics.');
                           }
                         }
                       });
@@ -123,10 +123,11 @@ List<String> topics = [
               ),
               SizedBox(height: 16.0),
               ElevatedButton(
-                onPressed: () {
+                onPressed: () async {
                   // Handle the selected topics
                   MyRouter.pushPageReplacement(context, DashboardScreen());
                   log("Selected Topics: $selectedTopics");
+
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: kPrimaryColor,
