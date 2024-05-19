@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:mebook/screens/selectTopic.dart';
+import 'package:mebook/screens/signin_screen.dart';
 import 'package:mebook/util/router.dart';
 import 'package:social_login_buttons/social_login_buttons.dart';
 
@@ -30,10 +31,6 @@ class SignUpScreen extends StatelessWidget {
       final UserCredential userCredential =
           await _auth.signInWithCredential(credential);
 
-      await storageService.saveString(
-          'userCredential', userCredential.toString());
-      await storageService.saveString(
-          'userName', userCredential.user.toString());
       return userCredential.user;
     }
     return null;
@@ -46,7 +43,6 @@ class SignUpScreen extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: <Widget>[
-
             Container(
               padding: EdgeInsets.all(20.00),
               child: Column(
@@ -63,7 +59,16 @@ class SignUpScreen extends StatelessWidget {
                         if (user != null) {
                           // Handle successful sign-in
                           log('Signed in as ${user.displayName}');
-                          showCustomSnackBar(context, "Sign-in successful!");
+                          log('Signed in as ${user}');
+                          await storageService.saveString(
+                              'userName', user.displayName.toString());
+                          await storageService.saveString(
+                              'userEmail', user.email.toString());
+                          await storageService.saveString(
+                              'userphotoURL', user.photoURL.toString());
+                          await storageService.saveString(
+                              'uid', user.uid.toString());
+                          showCustomSnackBar(context, "Sign-up successful!");
                           MyRouter.pushPageReplacement(
                               context, TopicSelectionScreen());
                         }
@@ -74,6 +79,7 @@ class SignUpScreen extends StatelessWidget {
                   TextButton(
                     onPressed: () {
                       // Handle log in navigation
+                      MyRouter.pushPageReplacement(context, SignInScreen());
                     },
                     child: Text.rich(
                       TextSpan(
