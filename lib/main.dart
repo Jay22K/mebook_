@@ -2,7 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:mebook/screens/singup_screen.dart';
+import 'package:mebook/screens/auths_screen.dart';
 import 'package:mebook/util/storeageService.dart';
 
 

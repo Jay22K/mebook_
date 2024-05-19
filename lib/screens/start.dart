@@ -4,7 +4,7 @@ import 'package:mebook/constants.dart';
 
 import 'package:mebook/screens/home.dart';
 import 'package:mebook/screens/selectTopic.dart';
-import 'package:mebook/screens/singup_screen.dart';
+import 'package:mebook/screens/auths_screen.dart';
 import 'package:mebook/util/router.dart';
 
 import 'dashboard.dart';
