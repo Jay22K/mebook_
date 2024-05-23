@@ -13,11 +13,28 @@
                         "endOffsets": "162,261,368,465"
                     },
                     "to": {
-                        "startLines": "20,21,22,23",
+                        "startLines": "20,30,31,32",
                         "startColumns": "4,4,4,4",
-                        "startOffsets": "2257,2369,2468,2575",
+                        "startOffsets": "2257,3046,3145,3252",
                         "endColumns": "111,98,106,96",
-                        "endOffsets": "2364,2463,2570,2667"
+                        "endOffsets": "2364,3140,3247,3344"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\A\\.gradle\\caches\\transforms-3\\7d30ef8dc32b60205daa1b220b081a89\\transformed\\jetified-exoplayer-core-2.18.7\\res\\values-da\\values-da.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,127,189,253,322,399,473,573,664",
+                        "endColumns": "71,61,63,68,76,73,99,90,67",
+                        "endOffsets": "122,184,248,317,394,468,568,659,727"
+                    },
+                    "to": {
+                        "startLines": "21,22,23,24,25,26,27,28,29",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "2369,2441,2503,2567,2636,2713,2787,2887,2978",
+                        "endColumns": "71,61,63,68,76,73,99,90,67",
+                        "endOffsets": "2436,2498,2562,2631,2708,2782,2882,2973,3041"
                     }
                 },
                 {
@@ -47,11 +64,11 @@
                         "endOffsets": "151"
                     },
                     "to": {
-                        "startLines": "24",
+                        "startLines": "33",
                         "startColumns": "4",
-                        "startOffsets": "2672",
+                        "startOffsets": "3349",
                         "endColumns": "100",
-                        "endOffsets": "2768"
+                        "endOffsets": "3445"
                     }
                 },
                 {

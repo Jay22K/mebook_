@@ -13,11 +13,11 @@
                         "endOffsets": "151"
                     },
                     "to": {
-                        "startLines": "24",
+                        "startLines": "33",
                         "startColumns": "4",
-                        "startOffsets": "2238",
+                        "startOffsets": "2799",
                         "endColumns": "100",
-                        "endOffsets": "2334"
+                        "endOffsets": "2895"
                     }
                 },
                 {
@@ -47,11 +47,11 @@
                         "endOffsets": "133,225,326,419"
                     },
                     "to": {
-                        "startLines": "20,21,22,23",
+                        "startLines": "20,30,31,32",
                         "startColumns": "4,4,4,4",
-                        "startOffsets": "1869,1952,2044,2145",
+                        "startOffsets": "1869,2513,2605,2706",
                         "endColumns": "82,91,100,92",
-                        "endOffsets": "1947,2039,2140,2233"
+                        "endOffsets": "1947,2600,2701,2794"
                     }
                 },
                 {
@@ -69,6 +69,23 @@
                         "startOffsets": "917",
                         "endColumns": "98",
                         "endOffsets": "1011"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\A\\.gradle\\caches\\transforms-3\\7d30ef8dc32b60205daa1b220b081a89\\transformed\\jetified-exoplayer-core-2.18.7\\res\\values-zh-rCN\\values-zh-rCN.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,111,167,225,278,350,404,479,557",
+                        "endColumns": "55,55,57,52,71,53,74,77,58",
+                        "endOffsets": "106,162,220,273,345,399,474,552,611"
+                    },
+                    "to": {
+                        "startLines": "21,22,23,24,25,26,27,28,29",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "1952,2008,2064,2122,2175,2247,2301,2376,2454",
+                        "endColumns": "55,55,57,52,71,53,74,77,58",
+                        "endOffsets": "2003,2059,2117,2170,2242,2296,2371,2449,2508"
                     }
                 }
             ]

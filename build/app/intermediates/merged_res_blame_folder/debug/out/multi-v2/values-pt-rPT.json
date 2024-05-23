@@ -13,11 +13,11 @@
                         "endOffsets": "151"
                     },
                     "to": {
-                        "startLines": "24",
+                        "startLines": "33",
                         "startColumns": "4",
-                        "startOffsets": "2819",
+                        "startOffsets": "3523",
                         "endColumns": "100",
-                        "endOffsets": "2915"
+                        "endOffsets": "3619"
                     }
                 },
                 {
@@ -35,6 +35,23 @@
                         "startOffsets": "55,160,323,451,559,727,855,977,1231,1419,1527,1697,1828,1987,2165,2233,2302",
                         "endColumns": "104,162,127,107,167,127,121,108,187,107,169,130,158,177,67,68,86",
                         "endOffsets": "155,318,446,554,722,850,972,1081,1414,1522,1692,1823,1982,2160,2228,2297,2384"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\A\\.gradle\\caches\\transforms-3\\7d30ef8dc32b60205daa1b220b081a89\\transformed\\jetified-exoplayer-core-2.18.7\\res\\values-pt-rPT\\values-pt-rPT.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,130,194,261,332,414,496,591,680",
+                        "endColumns": "74,63,66,70,81,81,94,88,78",
+                        "endOffsets": "125,189,256,327,409,491,586,675,754"
+                    },
+                    "to": {
+                        "startLines": "21,22,23,24,25,26,27,28,29",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "2505,2580,2644,2711,2782,2864,2946,3041,3130",
+                        "endColumns": "74,63,66,70,81,81,94,88,78",
+                        "endOffsets": "2575,2639,2706,2777,2859,2941,3036,3125,3204"
                     }
                 },
                 {
@@ -64,11 +81,11 @@
                         "endOffsets": "166,265,377,480"
                     },
                     "to": {
-                        "startLines": "20,21,22,23",
+                        "startLines": "20,30,31,32",
                         "startColumns": "4,4,4,4",
-                        "startOffsets": "2389,2505,2604,2716",
+                        "startOffsets": "2389,3209,3308,3420",
                         "endColumns": "115,98,111,102",
-                        "endOffsets": "2500,2599,2711,2814"
+                        "endOffsets": "2500,3303,3415,3518"
                     }
                 }
             ]

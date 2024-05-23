@@ -1,7 +1,9 @@
+import 'dart:convert';
 import 'dart:developer';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
+import 'package:cloud_firestore/cloud_firestore.dart';
 import '../constants.dart';
 import '../util/router.dart';
 import '../util/storeageService.dart';
@@ -9,12 +11,16 @@ import 'components/snackBar.dart';
 import 'dashboard.dart';
 
 class TopicSelectionScreen extends StatefulWidget {
+  final String uid;
+
+  TopicSelectionScreen({required this.uid});
+
   @override
   _TopicSelectionScreenState createState() => _TopicSelectionScreenState();
 }
 
 class _TopicSelectionScreenState extends State<TopicSelectionScreen> {
-List<String> topics = [
+  List<String> topics = [
     "Geography",
     "Biology",
     "Law",
@@ -40,13 +46,39 @@ List<String> topics = [
     "Computers",
     "Medicine",
     "History"
-];
-
+  ];
 
   Set<String> selectedTopics = Set<String>();
   final storageService = StorageService();
 
-    
+  bool _isLoading = false;
+
+  Future<void> registerUser() async {
+    setState(() {
+      _isLoading = true;
+    });
+    try {
+      final currentUser = FirebaseAuth.instance.currentUser;
+      if (currentUser != null) {
+        await FirebaseFirestore.instance
+            .collection('users')
+            .doc(currentUser.uid)
+            .set({
+          'selectedTopics': selectedTopics.toList(),
+        });
+        setState(() {
+          _isLoading = false;
+        });
+        MyRouter.pushPageReplacement(context, DashboardScreen());
+      }
+    } catch (e) {
+      setState(() {
+        _isLoading = false;
+      });
+      log('Error registering user: $e');
+      showCustomSnackBar(context, "$e");
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -96,7 +128,8 @@ List<String> topics = [
                             selectedTopics.add(topic);
                           } else {
                             // Show a snackbar or alert that only 3 topics are allowed.
-                            showCustomSnackBar(context, 'You can only select up to 3 topics.');
+                            showCustomSnackBar(
+                                context, 'You can only select up to 3 topics.');
                           }
                         }
                       });
@@ -125,9 +158,9 @@ List<String> topics = [
               ElevatedButton(
                 onPressed: () async {
                   // Handle the selected topics
-                  MyRouter.pushPageReplacement(context, DashboardScreen());
-                  log("Selected Topics: $selectedTopics");
 
+                  log("Selected Topics: $selectedTopics");
+                  registerUser();
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: kPrimaryColor,
@@ -136,14 +169,16 @@ List<String> topics = [
                     borderRadius: BorderRadius.circular(40.0),
                   ),
                 ),
-                child: Text(
-                  'Submit',
-                  style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                      fontFamily: 'Utopia'),
-                ),
+                child: _isLoading
+                    ? CircularProgressIndicator()
+                    : Text(
+                        'Submit',
+                        style: TextStyle(
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            fontFamily: 'Utopia'),
+                      ),
               ),
             ],
           ),

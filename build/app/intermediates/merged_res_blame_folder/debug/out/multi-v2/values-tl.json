@@ -13,11 +13,11 @@
                         "endOffsets": "151"
                     },
                     "to": {
-                        "startLines": "24",
+                        "startLines": "33",
                         "startColumns": "4",
-                        "startOffsets": "2841",
+                        "startOffsets": "3550",
                         "endColumns": "100",
-                        "endOffsets": "2937"
+                        "endOffsets": "3646"
                     }
                 },
                 {
@@ -35,6 +35,23 @@
                         "startOffsets": "1114",
                         "endColumns": "144",
                         "endOffsets": "1254"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\A\\.gradle\\caches\\transforms-3\\7d30ef8dc32b60205daa1b220b081a89\\transformed\\jetified-exoplayer-core-2.18.7\\res\\values-tl\\values-tl.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,132,196,264,330,410,488,588,686",
+                        "endColumns": "76,63,67,65,79,77,99,97,77",
+                        "endOffsets": "127,191,259,325,405,483,583,681,759"
+                    },
+                    "to": {
+                        "startLines": "21,22,23,24,25,26,27,28,29",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "2520,2597,2661,2729,2795,2875,2953,3053,3151",
+                        "endColumns": "76,63,67,65,79,77,99,97,77",
+                        "endOffsets": "2592,2656,2724,2790,2870,2948,3048,3146,3224"
                     }
                 },
                 {
@@ -64,11 +81,11 @@
                         "endOffsets": "153,258,369,474"
                     },
                     "to": {
-                        "startLines": "20,21,22,23",
+                        "startLines": "20,30,31,32",
                         "startColumns": "4,4,4,4",
-                        "startOffsets": "2417,2520,2625,2736",
+                        "startOffsets": "2417,3229,3334,3445",
                         "endColumns": "102,104,110,104",
-                        "endOffsets": "2515,2620,2731,2836"
+                        "endOffsets": "2515,3329,3440,3545"
                     }
                 }
             ]

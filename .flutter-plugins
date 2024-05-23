@@ -1,4 +1,6 @@
 # This is a generated file; do not edit or check into version control.
+cloud_firestore=C:\\Users\\A\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dev\\cloud_firestore-4.14.0\\
+cloud_firestore_web=C:\\Users\\A\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dev\\cloud_firestore_web-3.9.0\\
 firebase_auth=C:\\Users\\A\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dev\\firebase_auth-4.16.0\\
 firebase_auth_web=C:\\Users\\A\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dev\\firebase_auth_web-5.8.13\\
 firebase_core=C:\\Users\\A\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dev\\firebase_core-2.24.2\\
@@ -24,3 +26,7 @@ shared_preferences_linux=C:\\Users\\A\\AppData\\Local\\Pub\\Cache\\hosted\\pub.d
 shared_preferences_web=C:\\Users\\A\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dev\\shared_preferences_web-2.2.1\\
 shared_preferences_windows=C:\\Users\\A\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dev\\shared_preferences_windows-2.3.2\\
 sqflite=C:\\Users\\A\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dev\\sqflite-2.2.8+4\\
+video_player=C:\\Users\\A\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dev\\video_player-2.7.2\\
+video_player_android=C:\\Users\\A\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dev\\video_player_android-2.4.12\\
+video_player_avfoundation=C:\\Users\\A\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dev\\video_player_avfoundation-2.4.11\\
+video_player_web=C:\\Users\\A\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dev\\video_player_web-2.0.17\\

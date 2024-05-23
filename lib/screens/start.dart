@@ -61,7 +61,7 @@ class Start extends StatelessWidget {
                     borderRadius: new BorderRadius.circular(40)),
                 onPressed: () {
                   //TODO: repleace to push page replesment
-                  // MyRouter.pushPage(context, TopicSelectionScreen());
+                  
                   MyRouter.pushPage(context, SignUpScreen());
 
                   // MyRouter.pushPageReplacement(context, DashboardScreen());

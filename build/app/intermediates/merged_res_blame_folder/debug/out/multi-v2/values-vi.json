@@ -13,11 +13,11 @@
                         "endOffsets": "167,278,392,497"
                     },
                     "to": {
-                        "startLines": "20,21,22,23",
+                        "startLines": "20,30,31,32",
                         "startColumns": "4,4,4,4",
-                        "startOffsets": "2289,2406,2517,2631",
+                        "startOffsets": "2289,3098,3209,3323",
                         "endColumns": "116,110,113,104",
-                        "endOffsets": "2401,2512,2626,2731"
+                        "endOffsets": "2401,3204,3318,3423"
                     }
                 },
                 {
@@ -35,6 +35,23 @@
                         "startOffsets": "1071",
                         "endColumns": "127",
                         "endOffsets": "1194"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\A\\.gradle\\caches\\transforms-3\\7d30ef8dc32b60205daa1b220b081a89\\transformed\\jetified-exoplayer-core-2.18.7\\res\\values-vi\\values-vi.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,128,191,259,328,419,489,579,667",
+                        "endColumns": "72,62,67,68,90,69,89,87,79",
+                        "endOffsets": "123,186,254,323,414,484,574,662,742"
+                    },
+                    "to": {
+                        "startLines": "21,22,23,24,25,26,27,28,29",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "2406,2479,2542,2610,2679,2770,2840,2930,3018",
+                        "endColumns": "72,62,67,68,90,69,89,87,79",
+                        "endOffsets": "2474,2537,2605,2674,2765,2835,2925,3013,3093"
                     }
                 },
                 {
@@ -64,11 +81,11 @@
                         "endOffsets": "151"
                     },
                     "to": {
-                        "startLines": "24",
+                        "startLines": "33",
                         "startColumns": "4",
-                        "startOffsets": "2736",
+                        "startOffsets": "3428",
                         "endColumns": "100",
-                        "endOffsets": "2832"
+                        "endOffsets": "3524"
                     }
                 }
             ]

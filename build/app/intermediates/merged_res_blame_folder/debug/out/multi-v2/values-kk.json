@@ -13,11 +13,11 @@
                         "endOffsets": "151"
                     },
                     "to": {
-                        "startLines": "24",
+                        "startLines": "33",
                         "startColumns": "4",
-                        "startOffsets": "2689",
+                        "startOffsets": "3393",
                         "endColumns": "100",
-                        "endOffsets": "2785"
+                        "endOffsets": "3489"
                     }
                 },
                 {
@@ -38,6 +38,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\A\\.gradle\\caches\\transforms-3\\7d30ef8dc32b60205daa1b220b081a89\\transformed\\jetified-exoplayer-core-2.18.7\\res\\values-kk\\values-kk.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,120,184,252,316,401,488,585,681",
+                        "endColumns": "64,63,67,63,84,86,96,95,77",
+                        "endOffsets": "115,179,247,311,396,483,580,676,754"
+                    },
+                    "to": {
+                        "startLines": "21,22,23,24,25,26,27,28,29",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "2372,2437,2501,2569,2633,2718,2805,2902,2998",
+                        "endColumns": "64,63,67,63,84,86,96,95,77",
+                        "endOffsets": "2432,2496,2564,2628,2713,2800,2897,2993,3071"
+                    }
+                },
+                {
                     "source": "C:\\Users\\A\\.gradle\\caches\\transforms-3\\b28632eee6be296673b0aaf9b4c91cdd\\transformed\\browser-1.4.0\\res\\values-kk\\values-kk.xml",
                     "from": {
                         "startLines": "2,3,4,5",
@@ -47,11 +64,11 @@
                         "endOffsets": "150,254,362,467"
                     },
                     "to": {
-                        "startLines": "20,21,22,23",
+                        "startLines": "20,30,31,32",
                         "startColumns": "4,4,4,4",
-                        "startOffsets": "2272,2372,2476,2584",
+                        "startOffsets": "2272,3076,3180,3288",
                         "endColumns": "99,103,107,104",
-                        "endOffsets": "2367,2471,2579,2684"
+                        "endOffsets": "2367,3175,3283,3388"
                     }
                 },
                 {

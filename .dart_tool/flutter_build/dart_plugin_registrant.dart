@@ -10,10 +10,12 @@ import 'package:google_sign_in_android/google_sign_in_android.dart';
 import 'package:path_provider_android/path_provider_android.dart';
 import 'package:shared_preferences_android/shared_preferences_android.dart';
 import 'package:sqflite/sqflite.dart';
+import 'package:video_player_android/video_player_android.dart';
 import 'package:google_sign_in_ios/google_sign_in_ios.dart';
 import 'package:path_provider_foundation/path_provider_foundation.dart';
 import 'package:shared_preferences_foundation/shared_preferences_foundation.dart';
 import 'package:sqflite/sqflite.dart';
+import 'package:video_player_avfoundation/video_player_avfoundation.dart';
 import 'package:path_provider_linux/path_provider_linux.dart';
 import 'package:shared_preferences_linux/shared_preferences_linux.dart';
 import 'package:path_provider_foundation/path_provider_foundation.dart';
@@ -64,6 +66,15 @@ class _PluginRegistrant {
         );
       }
 
+      try {
+        AndroidVideoPlayer.registerWith();
+      } catch (err) {
+        print(
+          '`video_player_android` threw an error: $err. '
+          'The app may not function as expected until you remove this plugin from pubspec.yaml'
+        );
+      }
+
     } else if (Platform.isIOS) {
       try {
         GoogleSignInIOS.registerWith();
@@ -97,6 +108,15 @@ class _PluginRegistrant {
       } catch (err) {
         print(
           '`sqflite` threw an error: $err. '
+          'The app may not function as expected until you remove this plugin from pubspec.yaml'
+        );
+      }
+
+      try {
+        AVFoundationVideoPlayer.registerWith();
+      } catch (err) {
+        print(
+          '`video_player_avfoundation` threw an error: $err. '
           'The app may not function as expected until you remove this plugin from pubspec.yaml'
         );
       }

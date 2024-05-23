@@ -4,6 +4,23 @@
             "outputFile": "D:\\Projects\\andriod projects\\mebook_\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-km\\values-km.xml",
             "map": [
                 {
+                    "source": "C:\\Users\\A\\.gradle\\caches\\transforms-3\\7d30ef8dc32b60205daa1b220b081a89\\transformed\\jetified-exoplayer-core-2.18.7\\res\\values-km\\values-km.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,126,185,251,320,393,464,562,657",
+                        "endColumns": "70,58,65,68,72,70,97,94,68",
+                        "endOffsets": "121,180,246,315,388,459,557,652,721"
+                    },
+                    "to": {
+                        "startLines": "21,22,23,24,25,26,27,28,29",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "2373,2444,2503,2569,2638,2711,2782,2880,2975",
+                        "endColumns": "70,58,65,68,72,70,97,94,68",
+                        "endOffsets": "2439,2498,2564,2633,2706,2777,2875,2970,3039"
+                    }
+                },
+                {
                     "source": "C:\\Users\\A\\.gradle\\caches\\transforms-3\\6fdc9d3cf4af1e6e540383c75298a5ac\\transformed\\jetified-play-services-basement-18.2.0\\res\\values-km\\values.xml",
                     "from": {
                         "startLines": "4",
@@ -30,11 +47,11 @@
                         "endOffsets": "151"
                     },
                     "to": {
-                        "startLines": "24",
+                        "startLines": "33",
                         "startColumns": "4",
-                        "startOffsets": "2703",
+                        "startOffsets": "3374",
                         "endColumns": "100",
-                        "endOffsets": "2799"
+                        "endOffsets": "3470"
                     }
                 },
                 {
@@ -47,11 +64,11 @@
                         "endOffsets": "147,244,377,477"
                     },
                     "to": {
-                        "startLines": "20,21,22,23",
+                        "startLines": "20,30,31,32",
                         "startColumns": "4,4,4,4",
-                        "startOffsets": "2276,2373,2470,2603",
+                        "startOffsets": "2276,3044,3141,3274",
                         "endColumns": "96,96,132,99",
-                        "endOffsets": "2368,2465,2598,2698"
+                        "endOffsets": "2368,3136,3269,3369"
                     }
                 },
                 {
