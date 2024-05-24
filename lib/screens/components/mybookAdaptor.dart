@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 import '../../constants.dart';
 
@@ -30,7 +29,7 @@ class BookWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(
+      margin: const EdgeInsets.only(
         left: kDefaultPadding,
         bottom: kDefaultPadding,
       ),
@@ -53,7 +52,7 @@ class BookWidget extends StatelessWidget {
               //   ),
               // );
             },
-            child: Container(
+            child: SizedBox(
               width: 130,
               height: 185, // Height of the image
               child: Stack(
@@ -71,8 +70,8 @@ class BookWidget extends StatelessWidget {
                     top: 0,
                     left: 0,
                     child: Container(
-                      padding: EdgeInsets.symmetric(horizontal: 6, vertical: 3),
-                      decoration: BoxDecoration(
+                      padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 3),
+                      decoration: const BoxDecoration(
                         color: Colors.black,
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(7),
@@ -81,7 +80,7 @@ class BookWidget extends StatelessWidget {
                       ),
                       child: Text(
                         type,
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: Colors.white,
                           fontSize: 12,
                           fontWeight: FontWeight.bold,
@@ -93,12 +92,12 @@ class BookWidget extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 5),
-          Container(
+          const SizedBox(height: 5),
+          SizedBox(
             width: 130,
             child: Text(
               title,
-              style: TextStyle(
+              style: const TextStyle(
                 color: kTextColor,
                 fontWeight: FontWeight.bold,
                 fontSize: 14,
@@ -107,11 +106,11 @@ class BookWidget extends StatelessWidget {
               overflow: TextOverflow.ellipsis,
             ),
           ),
-          Container(
+          SizedBox(
             width: 130,
             child: Text(
               'by $author',
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.grey,
                 fontSize: 11,
               ),

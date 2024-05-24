@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../constants.dart';
-import '../details_screen.dart';
+
 import '../result_screen.dart';
 
 class HeaderWithSearchBar extends StatelessWidget {
   final TextEditingController searchController;
 
-  HeaderWithSearchBar({required this.searchController});
+  const HeaderWithSearchBar({super.key, required this.searchController});
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
+
     double height = MediaQuery.of(context).size.height;
     double availableHeight =
         MediaQuery.of(context).size.height - kToolbarHeight;
@@ -25,9 +25,8 @@ class HeaderWithSearchBar extends StatelessWidget {
 
     return LayoutBuilder(
       builder: (context, constraints) {
-        double availableWidth = constraints.maxWidth;
 
-        return Container(
+        return SizedBox(
           height: headerHeight,
           child: Stack(
             children: <Widget>[
@@ -67,14 +66,14 @@ class HeaderWithSearchBar extends StatelessWidget {
                     // SizedBox(
                     //   height: height,
                     // ),
-                    Spacer(),
-                    Text(
-                      "Search your favorites novels, techbooks, and story",
+                    const Spacer(),
+                    const Text(
+                      "Search your favorites novels, textbooks, and story",
                       style: TextStyle(
                         color: kBackgroundColor,
                       ),
                     ),
-                    Spacer(),
+                    const Spacer(),
                   ],
                 ),
               ),

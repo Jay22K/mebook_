@@ -1,17 +1,19 @@
 import 'dart:async';
 import 'dart:developer';
 import 'dart:io';
-import 'dart:typed_data';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_pdfview/flutter_pdfview.dart';
 
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:path_provider/path_provider.dart';
+
 
 import '../constants.dart';
-import 'components/bookAdapter.dart';
+
 
 class BookShelfScreen extends StatefulWidget {
+  const BookShelfScreen({super.key});
+
   @override
   _BookShelfScreenState createState() => _BookShelfScreenState();
 }

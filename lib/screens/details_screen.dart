@@ -127,6 +127,45 @@ class _DetailsScreenState extends State<DetailsScreen> {
     }
   }
 
+
+// Function to handle FAB tap and download the book
+void handleFABTap(BuildContext context, String? downloadUrl) {
+  if (downloadUrl == null) {
+    log('Download URL is null');
+    ToastShow(msg: 'Invalid download URL').showToast(context);
+    return;
+  }
+
+  String modifiedUrl = downloadUrl.replaceFirst("https://", "http://");
+  log(modifiedUrl);
+
+  ToastShow(msg: 'Book is Downloading').showToast(context);
+
+  FileDownloader.downloadFile(
+    url: downloadUrl,
+    downloadDestination: DownloadDestinations.appFiles,
+    notificationType: NotificationType.all,
+    
+    onProgress: (name, progress) {
+      log("file name : " + name.toString());
+      log('Progress: $progress%');
+    },
+    onDownloadCompleted: (path) {
+      log("downloaded to : " + path.toString());
+      ToastShow(msg: 'Downloading Successful..!').showToast(context);
+    },
+    onDownloadError: (error) {
+      log('Download error: $error');
+      ToastShow(msg: 'Downloading is canceled or failed due to network issues')
+          .showToast(context);
+    },
+  ).then((file) {
+    debugPrint('file path: ${file?.path}');
+  });
+
+  log("book URL : " + downloadUrl);
+}
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -173,39 +212,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
           elevation: 5,
           backgroundColor: kSecondColor,
           onPressed: () {
-            // Handle FAB tap
-
-            String modifiedUrl =
-                downloadUrl!.replaceFirst("https://", "http://");
-            log(modifiedUrl);
-
-            ToastShow(msg: 'Book is Downloading').showToast(context);
-            FileDownloader.downloadFile(
-                url: downloadUrl!,
-                downloadDestination: DownloadDestinations.appFiles,
-                notificationType: NotificationType.all,
-                onProgress: (name, progress) {
-                  log("file name : " + name.toString());
-                  log('Progress: $progress%');
-                },
-                onDownloadCompleted: (path) {
-                  log("downloaded to : " + path.toString());
-                  // _storeBookContent(filePath: path);
-                  ToastShow(msg: 'Downloading Successful..!')
-                      .showToast(context);
-                },
-                onDownloadError: (error) {
-                  log('Download error: $error');
-                  ToastShow(
-                          msg:
-                              'Downloading is canceled or failed due to network issues')
-                      .showToast(context);
-                }).then(
-              (file) {
-                debugPrint('file path: ${file?.path}');
-              },
-            );
-            log("book URL : " + downloadUrl!);
+          handleFABTap(context, downloadUrl);
           },
           child: Icon(Icons.file_download),
         ),

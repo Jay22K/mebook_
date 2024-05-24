@@ -9,13 +9,14 @@ import 'package:mebook/util/router.dart';
 import 'package:social_login_buttons/social_login_buttons.dart';
 import 'package:video_player/video_player.dart';
 
-import '../constants.dart';
 import '../util/storeageService.dart';
 import 'components/snackBar.dart';
-import 'components/toast.dart';
+
 import 'dashboard.dart';
 
 class SignUpScreen extends StatefulWidget {
+  const SignUpScreen({super.key});
+
   @override
   State<SignUpScreen> createState() => _SignUpScreenState();
 }
@@ -23,7 +24,6 @@ class SignUpScreen extends StatefulWidget {
 class _SignUpScreenState extends State<SignUpScreen> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
-  final GoogleSignIn _googleSignIn = GoogleSignIn();
 
   final storageService = StorageService();
 
@@ -85,7 +85,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               userCredential.additionalUserInfo?.isNewUser ?? false;
           String message = isNewUser ? "Sign-up successful!" : "Welcome back!";
 
-// Show a custom snack bar with the welcome message
+          // Show a custom snack bar with the welcome message
           showCustomSnackBar(context, message);
 
           if (isNewUser) {
@@ -148,7 +148,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
     return Scaffold(
       body: SafeArea(
         child: Stack(
@@ -179,11 +178,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                     ],
                   ),
-                  padding: EdgeInsets.all(16.0),
+                  padding: const EdgeInsets.all(16.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Text(
+                      const Text(
                         'Find Best Books With Me',
                         style: TextStyle(
                           fontSize: 24.0,
@@ -191,8 +190,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         ),
                         textAlign: TextAlign.center,
                       ),
-                      SizedBox(height: 8.0),
-                      Text(
+                      const SizedBox(height: 8.0),
+                      const Text(
                         'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
                         style: TextStyle(
                           fontSize: 16.0,
@@ -200,9 +199,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         ),
                         textAlign: TextAlign.center,
                       ),
-                      SizedBox(height: 16.0),
+                      const SizedBox(height: 16.0),
                       _isLoading
-                          ? CircularProgressIndicator()
+                          ? const CircularProgressIndicator()
                           : SocialLoginButton(
                               borderRadius: 30,
                               fontSize: 18,
@@ -226,7 +225,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               },
                               mode: SocialLoginButtonMode.multi,
                             ),
-                      SizedBox(height: 8.0),
+                      const SizedBox(height: 8.0),
                     ],
                   ),
                 ),

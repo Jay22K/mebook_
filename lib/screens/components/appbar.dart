@@ -24,14 +24,13 @@ class appbar extends StatelessWidget {
       actions: [
         SizedBox(
           width: 100,
-          child: profileUrl != null
-              ? CircleAvatar(
+          child:CircleAvatar(
                   radius: 48, // Image radius
-                  backgroundImage: NetworkImage(profileUrl),
+                  foregroundImage: NetworkImage(profileUrl),
+                  backgroundImage: 
+                  AssetImage('assets/imgs/user.png'), // Image path
                 )
-              : Image.asset(
-                  'assets/imgs/user.png',
-                ),
+             
         ),
       ],
     );
