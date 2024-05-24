@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:mebook/constants.dart';
@@ -7,9 +9,39 @@ import 'package:mebook/screens/selectTopic.dart';
 import 'package:mebook/screens/auths_screen.dart';
 import 'package:mebook/util/router.dart';
 
+import '../util/storeageService.dart';
 import 'dashboard.dart';
 
 class Start extends StatelessWidget {
+  final storageService = StorageService();
+
+  Future<void> checkUser(BuildContext context) async {
+    final storageService =
+        StorageService(); // Instantiate StorageService if not already done
+
+    String? userId = await storageService.getString('uid');
+    List<String>? topics = await storageService.getStringList('selectedTopics');
+
+    if (userId != null) {
+      log(userId); // Log userId only if it's not null
+      log(topics.toString()); // Log topics only if it's not null
+
+      if (topics != null) {
+        MyRouter.pushPageReplacement(
+          context,
+          DashboardScreen(uid: userId, topics: topics),
+        );
+      } else {
+        MyRouter.pushPageReplacement(
+          context,
+          TopicSelectionScreen(uid: userId),
+        );
+      }
+    } else {
+      MyRouter.pushPageReplacement(context, SignUpScreen());
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,11 +92,7 @@ class Start extends StatelessWidget {
                 shape: RoundedRectangleBorder(
                     borderRadius: new BorderRadius.circular(40)),
                 onPressed: () {
-                  //TODO: repleace to push page replesment
-                  
-                  MyRouter.pushPage(context, SignUpScreen());
-
-                  // MyRouter.pushPageReplacement(context, DashboardScreen());
+                  checkUser(context);
                 },
                 child: Text(
                   "Start Reading",

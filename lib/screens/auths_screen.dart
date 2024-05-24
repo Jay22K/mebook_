@@ -1,6 +1,5 @@
 import 'dart:developer';
 
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -101,22 +100,36 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 .collection('users')
                 .doc(user.uid)
                 .get()
-                .then((DocumentSnapshot snapshot) {
-              if (snapshot.exists &&
-                  (snapshot.data() as Map<String, dynamic>)['selectedTopics'] !=
-                      null) {
-                // Navigate to the DashboardScreen for existing users with selectedTopics
-                MyRouter.pushPageReplacement(context, DashboardScreen());
+                .then((DocumentSnapshot snapshot) async {
+              if (snapshot.exists) {
+                Map<String, dynamic>? userData =
+                    snapshot.data() as Map<String, dynamic>?;
+
+                if (userData != null &&
+                    userData.containsKey('selectedTopics')) {
+                  List<String> selectedTopics =
+                      List<String>.from(userData['selectedTopics']);
+
+                  await storageService.saveStringList(
+                      'selectedTopics', selectedTopics.toList());
+                  MyRouter.pushPageReplacement(
+                    context,
+                    DashboardScreen(uid: user.uid, topics: selectedTopics),
+                  );
+                } else {
+                  // If 'selectedTopics' is not present or is null, navigate to topic selection screen
+                  MyRouter.pushPageReplacement(
+                    context,
+                    TopicSelectionScreen(uid: user.uid),
+                  );
+                }
               } else {
-                // Navigate to a different screen if selectedTopics is not added
-                MyRouter.pushPageReplacement(
-                  context,
-                  TopicSelectionScreen(uid: user.uid), // Pass the uid here
-                );
+                // Handle the case where the document does not exist
+                log('User document does not exist');
               }
             }).catchError((error) {
-              // Handle any errors
-              log("Error: $error");
+              // Handle errors such as permission denied, network issues, etc.
+              log('Error fetching user data: $error');
             });
           }
         }

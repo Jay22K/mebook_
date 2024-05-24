@@ -1,12 +1,17 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:mebook/screens/settings.dart';
 
+import '../util/storeageService.dart';
 import 'bookShelf.dart';
 import 'home.dart';
 
 class DashboardScreen extends StatefulWidget {
-  const DashboardScreen({Key? key}) : super(key: key);
+  final String uid;
+  final List<String> topics;
+  const DashboardScreen({required this.uid, required this.topics});
 
   @override
   State<DashboardScreen> createState() => _DashboardScreenState();
@@ -15,11 +20,31 @@ class DashboardScreen extends StatefulWidget {
 class _DashboardScreenState extends State<DashboardScreen> {
   late PageController _pageController;
   int _selectedIndex = 0;
-
+  String username = '';
+  String userphotoURL = '';
   @override
   void initState() {
     super.initState();
     _pageController = PageController(initialPage: _selectedIndex);
+    getData();
+  }
+
+  Future<void> getData() async {
+    final storageService = StorageService();
+
+    // Retrieve the data asynchronously
+    final retrievedUsername = await storageService.getString('userName');
+    final retrievedUserPhotoURL =
+        await storageService.getString('userphotoURL');
+
+    // Update the state after the asynchronous calls are completed
+    setState(() {
+      username = retrievedUsername!;
+      userphotoURL = retrievedUserPhotoURL!;
+    });
+
+    log(username);
+    log(userphotoURL);
   }
 
   @override
@@ -34,7 +59,12 @@ class _DashboardScreenState extends State<DashboardScreen> {
       body: PageView(
         controller: _pageController,
         children: [
-          HomeScreen(),
+          HomeScreen(
+            uid: widget.uid,
+            topics: widget.topics,
+            userName: username,
+            userphotoURL: userphotoURL,
+          ),
           BookShelfScreen(),
           SettingsScreen(),
         ],

@@ -69,7 +69,14 @@ class _TopicSelectionScreenState extends State<TopicSelectionScreen> {
         setState(() {
           _isLoading = false;
         });
-        MyRouter.pushPageReplacement(context, DashboardScreen());
+        await storageService.saveStringList(
+            'selectedTopics', selectedTopics.toList());
+        MyRouter.pushPageReplacement(
+            context,
+            DashboardScreen(
+              uid: currentUser.uid,
+              topics: selectedTopics.toList(),
+            ));
       }
     } catch (e) {
       setState(() {
