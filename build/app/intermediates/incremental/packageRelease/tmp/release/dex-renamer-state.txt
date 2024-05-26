@@ -1,4 +1,0 @@
-#Sun Dec 31 02:52:06 IST 2023
-base.0=G\:\\Projects\\andriod projects\\mebook_\\build\\app\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes.dex
-path.0=classes.dex
-renamed.0=classes.dex
