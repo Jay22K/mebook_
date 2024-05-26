@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "G:\\Projects\\andriod projects\\mebook_\\build\\flutter_file_view\\intermediates\\merged_res\\release\\values-my\\values-my.xml",
+            "outputFile": "D:\\Projects\\andriod projects\\mebook_\\build\\flutter_file_view\\intermediates\\merged_res\\release\\values-my\\values-my.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\A\\.gradle\\caches\\transforms-3\\acbce933e4b464a5224ed377a62db1f5\\transformed\\core-1.6.0\\res\\values-my\\values-my.xml",
+                    "source": "C:\\Users\\A\\.gradle\\caches\\transforms-3\\c42d79bb9bfae81f8d3e818b751f6ab2\\transformed\\core-1.6.0\\res\\values-my\\values-my.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -16,10 +16,10 @@
             ]
         },
         {
-            "outputFile": "G:\\Projects\\andriod projects\\mebook_\\build\\flutter_file_view\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-my\\values-my.xml",
+            "outputFile": "D:\\Projects\\andriod projects\\mebook_\\build\\flutter_file_view\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-my\\values-my.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\A\\.gradle\\caches\\transforms-3\\acbce933e4b464a5224ed377a62db1f5\\transformed\\core-1.6.0\\res\\values-my\\values-my.xml",
+                    "source": "C:\\Users\\A\\.gradle\\caches\\transforms-3\\c42d79bb9bfae81f8d3e818b751f6ab2\\transformed\\core-1.6.0\\res\\values-my\\values-my.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

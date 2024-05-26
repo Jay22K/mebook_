@@ -22,17 +22,15 @@ class appbar extends StatelessWidget {
       elevation: 0,
       backgroundColor: kPrimaryColor,
       actions: [
-        SizedBox(
+         Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20)
+          ),
           width: 100,
-          child:CircleAvatar(
-                  radius: 48, // Image radius
-                  foregroundImage: NetworkImage(profileUrl),
-                  backgroundImage: 
-                  AssetImage('assets/imgs/user.png'), // Image path
-                )
-             
-        ),
-      ],
-    );
-  }
-}
+          child: 
+          profileUrl.isEmpty?
+          Image.asset(
+            'assets/imgs/user.png',
+          ):Image.network(
+            profileUrl,
+          ),

@@ -31,7 +31,7 @@ class _BookShelfScreenState extends State<BookShelfScreen> {
 
   Future<void> getFilesList() async {
     Directory directory = Directory(
-        'storage/emulated/0/Android/data/com.example.mebook/files/data/user/0/com.example.mebook/files/');
+        '/storage/emulated/0/Android/data/com.example.mebook/files/data/user/0/com.example.mebook/files/');
     List<FileSystemEntity> fileList = directory.listSync();
 
     List<File> tempFiles = [];

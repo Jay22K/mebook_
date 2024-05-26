@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "G:\\Projects\\andriod projects\\mebook_\\build\\fluttertoast\\intermediates\\merged_res\\release\\values-nb\\values-nb.xml",
+            "outputFile": "D:\\Projects\\andriod projects\\mebook_\\build\\fluttertoast\\intermediates\\merged_res\\release\\values-nb\\values-nb.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\A\\.gradle\\caches\\transforms-3\\acbce933e4b464a5224ed377a62db1f5\\transformed\\core-1.6.0\\res\\values-nb\\values-nb.xml",
+                    "source": "C:\\Users\\A\\.gradle\\caches\\transforms-3\\c42d79bb9bfae81f8d3e818b751f6ab2\\transformed\\core-1.6.0\\res\\values-nb\\values-nb.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -16,10 +16,10 @@
             ]
         },
         {
-            "outputFile": "G:\\Projects\\andriod projects\\mebook_\\build\\fluttertoast\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-nb\\values-nb.xml",
+            "outputFile": "D:\\Projects\\andriod projects\\mebook_\\build\\fluttertoast\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-nb\\values-nb.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\A\\.gradle\\caches\\transforms-3\\acbce933e4b464a5224ed377a62db1f5\\transformed\\core-1.6.0\\res\\values-nb\\values-nb.xml",
+                    "source": "C:\\Users\\A\\.gradle\\caches\\transforms-3\\c42d79bb9bfae81f8d3e818b751f6ab2\\transformed\\core-1.6.0\\res\\values-nb\\values-nb.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

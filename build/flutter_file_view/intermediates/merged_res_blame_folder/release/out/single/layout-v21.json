@@ -1,18 +1,18 @@
 [
     {
-        "merged": "G:\\Projects\\andriod projects\\mebook_\\build\\flutter_file_view\\intermediates\\merged_res\\release\\layout-v21\\notification_template_custom_big.xml",
-        "source": "C:\\Users\\A\\.gradle\\caches\\transforms-3\\acbce933e4b464a5224ed377a62db1f5\\transformed\\core-1.6.0\\res\\layout-v21\\notification_template_custom_big.xml"
+        "merged": "D:\\Projects\\andriod projects\\mebook_\\build\\flutter_file_view\\intermediates\\merged_res\\release\\layout-v21\\notification_template_icon_group.xml",
+        "source": "C:\\Users\\A\\.gradle\\caches\\transforms-3\\c42d79bb9bfae81f8d3e818b751f6ab2\\transformed\\core-1.6.0\\res\\layout-v21\\notification_template_icon_group.xml"
     },
     {
-        "merged": "G:\\Projects\\andriod projects\\mebook_\\build\\flutter_file_view\\intermediates\\merged_res\\release\\layout-v21\\notification_action_tombstone.xml",
-        "source": "C:\\Users\\A\\.gradle\\caches\\transforms-3\\acbce933e4b464a5224ed377a62db1f5\\transformed\\core-1.6.0\\res\\layout-v21\\notification_action_tombstone.xml"
+        "merged": "D:\\Projects\\andriod projects\\mebook_\\build\\flutter_file_view\\intermediates\\merged_res\\release\\layout-v21\\notification_action.xml",
+        "source": "C:\\Users\\A\\.gradle\\caches\\transforms-3\\c42d79bb9bfae81f8d3e818b751f6ab2\\transformed\\core-1.6.0\\res\\layout-v21\\notification_action.xml"
     },
     {
-        "merged": "G:\\Projects\\andriod projects\\mebook_\\build\\flutter_file_view\\intermediates\\merged_res\\release\\layout-v21\\notification_action.xml",
-        "source": "C:\\Users\\A\\.gradle\\caches\\transforms-3\\acbce933e4b464a5224ed377a62db1f5\\transformed\\core-1.6.0\\res\\layout-v21\\notification_action.xml"
+        "merged": "D:\\Projects\\andriod projects\\mebook_\\build\\flutter_file_view\\intermediates\\merged_res\\release\\layout-v21\\notification_template_custom_big.xml",
+        "source": "C:\\Users\\A\\.gradle\\caches\\transforms-3\\c42d79bb9bfae81f8d3e818b751f6ab2\\transformed\\core-1.6.0\\res\\layout-v21\\notification_template_custom_big.xml"
     },
     {
-        "merged": "G:\\Projects\\andriod projects\\mebook_\\build\\flutter_file_view\\intermediates\\merged_res\\release\\layout-v21\\notification_template_icon_group.xml",
-        "source": "C:\\Users\\A\\.gradle\\caches\\transforms-3\\acbce933e4b464a5224ed377a62db1f5\\transformed\\core-1.6.0\\res\\layout-v21\\notification_template_icon_group.xml"
+        "merged": "D:\\Projects\\andriod projects\\mebook_\\build\\flutter_file_view\\intermediates\\merged_res\\release\\layout-v21\\notification_action_tombstone.xml",
+        "source": "C:\\Users\\A\\.gradle\\caches\\transforms-3\\c42d79bb9bfae81f8d3e818b751f6ab2\\transformed\\core-1.6.0\\res\\layout-v21\\notification_action_tombstone.xml"
     }
 ]

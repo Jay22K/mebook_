@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "G:\\Projects\\andriod projects\\mebook_\\build\\path_provider_android\\intermediates\\merged_res\\release\\values-sq\\values-sq.xml",
+            "outputFile": "D:\\Projects\\andriod projects\\mebook_\\build\\path_provider_android\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-sq\\values-sq.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\A\\.gradle\\caches\\transforms-3\\acbce933e4b464a5224ed377a62db1f5\\transformed\\core-1.6.0\\res\\values-sq\\values-sq.xml",
+                    "source": "C:\\Users\\A\\.gradle\\caches\\transforms-3\\c42d79bb9bfae81f8d3e818b751f6ab2\\transformed\\core-1.6.0\\res\\values-sq\\values-sq.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -16,10 +16,10 @@
             ]
         },
         {
-            "outputFile": "G:\\Projects\\andriod projects\\mebook_\\build\\path_provider_android\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-sq\\values-sq.xml",
+            "outputFile": "D:\\Projects\\andriod projects\\mebook_\\build\\path_provider_android\\intermediates\\merged_res\\release\\values-sq\\values-sq.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\A\\.gradle\\caches\\transforms-3\\acbce933e4b464a5224ed377a62db1f5\\transformed\\core-1.6.0\\res\\values-sq\\values-sq.xml",
+                    "source": "C:\\Users\\A\\.gradle\\caches\\transforms-3\\c42d79bb9bfae81f8d3e818b751f6ab2\\transformed\\core-1.6.0\\res\\values-sq\\values-sq.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
