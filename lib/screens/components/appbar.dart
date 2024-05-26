@@ -33,4 +33,9 @@ class appbar extends StatelessWidget {
             'assets/imgs/user.png',
           ):Image.network(
             profileUrl,
-          ),
+          ),
+        ),
+      ],
+    );
+  }
+}
