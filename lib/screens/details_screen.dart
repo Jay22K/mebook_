@@ -34,6 +34,7 @@ class DetailsScreen extends StatefulWidget {
       required this.type,
       required this.year});
 
+
   @override
   State<DetailsScreen> createState() => _DetailsScreenState();
 }
