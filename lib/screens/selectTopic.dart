@@ -1,45 +1,91 @@
+import 'dart:convert';
 import 'dart:developer';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
+import 'package:cloud_firestore/cloud_firestore.dart';
 import '../constants.dart';
 import '../util/router.dart';
+import '../util/storeageService.dart';
+import 'components/snackBar.dart';
 import 'dashboard.dart';
 
 class TopicSelectionScreen extends StatefulWidget {
+  final String uid;
+
+  TopicSelectionScreen({required this.uid});
+
   @override
   _TopicSelectionScreenState createState() => _TopicSelectionScreenState();
 }
 
 class _TopicSelectionScreenState extends State<TopicSelectionScreen> {
   List<String> topics = [
-    "CS",
-    "Technology",
-    "Art",
+    "Geography",
     "Biology",
+    "Law",
+    "Literature",
+    "Physics",
+    "Technology",
+    "CS",
+    "Economy",
+    "Linguistics",
+    "Housekeeping, leisure",
+    "Education",
+    "Mathematics",
+    "Jurisprudence",
+    "Other Social Sciences",
+    "Geology",
+    "Religion",
+    "Psychology",
+    "Art",
+    "Science (General)",
     "Business",
     "Chemistry",
-    "Computers",
-    "Geography",
-    "Geology",
-    "Economy",
-    "Education",
-    "Jurisprudence",
-    "Housekeeping, leisure",
-    "History",
-    "Linguistics",
-    "Literature",
-    "Mathematics",
-    "Medicine",
-    "Other Social Sciences",
-    "Physics",
     "Physical Educ. and Sport",
-    "Psychology",
-    "Religion",
-    "Science (General)",
+    "Computers",
+    "Medicine",
+    "History"
   ];
 
   Set<String> selectedTopics = Set<String>();
+  final storageService = StorageService();
+
+  bool _isLoading = false;
+
+  Future<void> registerUser() async {
+    setState(() {
+      _isLoading = true;
+    });
+    try {
+      final currentUser = FirebaseAuth.instance.currentUser;
+      if (currentUser != null) {
+        await FirebaseFirestore.instance
+            .collection('users')
+            .doc(currentUser.uid)
+            .set({
+          'selectedTopics': selectedTopics.toList(),
+        });
+        setState(() {
+          _isLoading = false;
+        });
+        await storageService.saveStringList(
+            'selectedTopics', selectedTopics.toList());
+        MyRouter.pushPageReplacement(
+            context,
+            DashboardScreen(
+              uid: currentUser.uid,
+              topics: selectedTopics.toList(),
+            ));
+      }
+    } catch (e) {
+      setState(() {
+        _isLoading = false;
+      });
+      log('Error registering user: $e');
+      showCustomSnackBar(context, "$e");
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -89,12 +135,8 @@ class _TopicSelectionScreenState extends State<TopicSelectionScreen> {
                             selectedTopics.add(topic);
                           } else {
                             // Show a snackbar or alert that only 3 topics are allowed.
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(
-                                content:
-                                    Text('You can only select up to 3 topics.'),
-                              ),
-                            );
+                            showCustomSnackBar(
+                                context, 'You can only select up to 3 topics.');
                           }
                         }
                       });
@@ -121,10 +163,11 @@ class _TopicSelectionScreenState extends State<TopicSelectionScreen> {
               ),
               SizedBox(height: 16.0),
               ElevatedButton(
-                onPressed: () {
+                onPressed: () async {
                   // Handle the selected topics
-                  MyRouter.pushPageReplacement(context, DashboardScreen());
+
                   log("Selected Topics: $selectedTopics");
+                  registerUser();
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: kPrimaryColor,
@@ -133,14 +176,16 @@ class _TopicSelectionScreenState extends State<TopicSelectionScreen> {
                     borderRadius: BorderRadius.circular(40.0),
                   ),
                 ),
-                child: Text(
-                  'Submit',
-                  style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                      fontFamily: 'Utopia'),
-                ),
+                child: _isLoading
+                    ? CircularProgressIndicator()
+                    : Text(
+                        'Submit',
+                        style: TextStyle(
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            fontFamily: 'Utopia'),
+                      ),
               ),
             ],
           ),

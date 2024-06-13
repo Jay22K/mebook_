@@ -1,11 +1,7 @@
 import 'dart:convert';
 import 'dart:developer';
 
-import 'package:dot_navigation_bar/dot_navigation_bar.dart';
-import 'package:floating_navbar/floating_navbar.dart';
-import 'package:floating_navbar/floating_navbar_item.dart';
 import 'package:flutter/material.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:mebook/screens/settings.dart';
 import 'package:mebook/services/json_parser.dart';
 
@@ -22,7 +18,17 @@ import 'components/recomend_books.dart';
 enum _SelectedTab { home, favorite, search, person }
 
 class HomeScreen extends StatefulWidget {
-  //const HomeScreen({required Key key}) : super(key: key);
+  final String uid;
+  final String userName;
+  final String userphotoURL;
+  final List<String> topics;
+
+  const HomeScreen({
+    required this.userName,
+    required this.uid,
+    required this.topics,
+    required this.userphotoURL,
+  });
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -43,106 +49,52 @@ class _HomeScreenState extends State<HomeScreen> {
     'Spiritual',
     'Other'
   ];
-  List<Book> fetchedBooks = []; // Create a list to hold fetched books
-  List<Book> fetchedBooks2 = []; // Create a list to hold fetched books
+  List<Book> fetchedBooks1 = [];
+  List<Book> fetchedBooks2 = [];
+  List<Book> fetchedBooks3 = [];
   DataFetcher? dataFetcher;
 
-  // void _handleIndexChanged(int i) {
-  //   setState(() {
-  //     _selectedTab = _SelectedTab.values[i];
-  //   });
-  // }
+  @override
+  void initState() {
+    super.initState();
+    fetchInitialBooks();
+  }
 
   @override
   void dispose() {
-    // TODO: implement dispose
-    super.dispose();
     searchController.dispose();
+    super.dispose();
   }
 
-  int _selectedIndex = 0;
-
-  final List<Widget> _screens = [
-    // Replace these with your actual screens or widgets
-    Text('Home'),
-    Text('Favorites'),
-    Text('Search'),
-    Text('Profile'),
-  ];
-
-  bool fabHovered = true;
-
-  String? sescription;
-
-  BookData? bookDownload;
-  Books? booksdata;
-
-  int limit = 0;
-  String result = "";
-  int status = 0;
-  int totalFiles = 0;
-  int totalPages = 0;
-
-  String? downloadUrl, description, bookinfo;
-
-// Function to fetch books
-  Future<void> fetchBooks(String category, int page) async {
-    setState(() {
-      fetchedBooks = []; // Set fetchedBooks to an empty list
-    });
-    try {
-      dataFetcher = DataFetcher(query: category, page: page);
-      final books = await dataFetcher!.fetchBooks();
-      booksdata = books;
-
-      String bookdataresponse =
-          booksdata!.toRawJson(); // this is  string json response
-
-      // Convert the JSON string to a map
-      Map<String, dynamic> jsonMap = json.decode(bookdataresponse);
-
-      // Access the "books" list from the JSON and convert it to a List<Book>
-      List<dynamic> booksJson = jsonMap['books'];
-      List<Book> booksList =
-          booksJson.map((bookJson) => Book.fromJson(bookJson)).toList();
-
-      // Update fetchedBooks with the retrieved books list
-      setState(() {
-        fetchedBooks = booksList;
-      });
-    } catch (e) {
-      // Handle errors, if any
-      log('Error fetching books: $e');
+  Future<void> fetchInitialBooks() async {
+    if (widget.topics.isNotEmpty) {
+      await fetchBooks(widget.topics[0], 1, fetchedBooks1);
+    }
+    if (widget.topics.length > 1) {
+      await fetchBooks(widget.topics[1], 1, fetchedBooks2);
+    }
+    if (widget.topics.length > 2) {
+      await fetchBooks(widget.topics[2], 1, fetchedBooks3);
     }
   }
 
-// Function to fetch books
-  Future<void> fetchBooks2(String category, int page) async {
-    setState(() {
-      fetchedBooks2 = []; // Set fetchedBooks to an empty list
-    });
+  Future<void> fetchBooks(
+      String category, int page, List<Book> bookList) async {
+    bookList.clear();
     try {
       dataFetcher = DataFetcher(query: category, page: page);
       final books = await dataFetcher!.fetchBooks();
-      booksdata = books;
-
-      String bookdataresponse =
-          booksdata!.toRawJson(); // this is  string json response
-
-      // Convert the JSON string to a map
-      Map<String, dynamic> jsonMap = json.decode(bookdataresponse);
-
-      // Access the "books" list from the JSON and convert it to a List<Book>
-      List<dynamic> booksJson = jsonMap['books'];
-      List<Book> booksList =
+      final booksJson =
+          json.decode(books.toRawJson())['books'] as List<dynamic>;
+      final booksList =
           booksJson.map((bookJson) => Book.fromJson(bookJson)).toList();
 
-      // Update fetchedBooks with the retrieved books list
       setState(() {
-        fetchedBooks2 = booksList;
+        bookList.clear(); // Clear the list before adding new items
+
+        bookList.addAll(booksList);
       });
     } catch (e) {
-      // Handle errors, if any
       log('Error fetching books: $e');
     }
   }
@@ -155,25 +107,24 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Drawer(
           child: ListView(
             padding: EdgeInsets.zero,
-            children: <Widget>[
+            children: [
               DrawerHeader(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
+                  children: [
                     Text(
                       'mebook',
                       style: TextStyle(
-                          fontSize: 25.0,
-                          fontWeight: FontWeight.w900,
-                          fontFamily: 'Poppins'),
+                        fontSize: 25.0,
+                        fontWeight: FontWeight.w900,
+                        fontFamily: 'Poppins',
+                      ),
                     ),
-                    SizedBox(
-                      height: 10.0,
-                    ),
+                    SizedBox(height: 10.0),
                     Text(
-                      'an open source library ',
+                      'an open source library',
                       style: kListTextStyle,
-                    )
+                    ),
                   ],
                 ),
               ),
@@ -182,36 +133,27 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       body: ScrollConfiguration(
-        // remove Bluish Scroll Glow
         behavior: CustomScroll(),
         child: SingleChildScrollView(
           child: Column(
-            //crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
+            children: [
               appbar(
-                title: 'Hello , Jayesh!',
+                title: 'Hello, ${widget.userName}',
+                profileUrl: widget.userphotoURL,
               ),
-              HeaderWithSearchBar(
-                searchController: searchController,
-              ),
+              HeaderWithSearchBar(searchController: searchController),
               ChipsFilter(
                 categories: categoryList,
                 onCategorySelected: (category) async {
-                  setState(() {
-                    selectedCategory = category;
-                    // Handle category selection as needed.
-                    log(selectedCategory);
-                  });
-                  await fetchBooks(
-                      selectedCategory, 1); // Call fetchBooks function
-                  await fetchBooks2(
-                      selectedCategory, 2); // Call fetchBooks function
+                  setState(() => selectedCategory = category);
+                  await fetchBooks(selectedCategory, 1, fetchedBooks1);
+                  await fetchBooks(selectedCategory, 2, fetchedBooks2);
+                  await fetchBooks(selectedCategory, 3, fetchedBooks3);
                 },
               ),
-              RecomendsBooks(books: fetchedBooks),
+              RecomendsBooks(books: fetchedBooks1),
               RecomendsBooks(books: fetchedBooks2),
-              // RecomendsBooks(),
-              // SizedBox(height: 60)
+              RecomendsBooks(books: fetchedBooks3),
             ],
           ),
         ),

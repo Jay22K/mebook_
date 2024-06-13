@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "101611854024",
+    "project_id": "mebook-f79be",
+    "storage_bucket": "mebook-f79be.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:101611854024:android:52f90b50b2884d3ef7adfd",
+        "android_client_info": {
+          "package_name": "com.jayesh.mebook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "101611854024-qg62j013fnktjdd8k4tubfm2eu88ug5p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJFQFXWvcqaVhWQwlYHNifTJkYi13JoZc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "101611854024-qg62j013fnktjdd8k4tubfm2eu88ug5p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

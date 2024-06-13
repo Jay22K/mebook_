@@ -4,8 +4,9 @@ import '../../constants.dart';
 
 class appbar extends StatelessWidget {
   final String title;
+  final String profileUrl;
 
-  appbar({required this.title});
+  appbar({required this.title, required this.profileUrl});
 
   @override
   Widget build(BuildContext context) {
@@ -21,10 +22,17 @@ class appbar extends StatelessWidget {
       elevation: 0,
       backgroundColor: kPrimaryColor,
       actions: [
-        SizedBox(
+         Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20)
+          ),
           width: 100,
-          child: Image.asset(
+          child: 
+          profileUrl.isEmpty?
+          Image.asset(
             'assets/imgs/user.png',
+          ):Image.network(
+            profileUrl,
           ),
         ),
       ],
