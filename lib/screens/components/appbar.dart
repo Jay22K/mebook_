@@ -22,19 +22,26 @@ class appbar extends StatelessWidget {
       elevation: 0,
       backgroundColor: kPrimaryColor,
       actions: [
-         Container(
+        Container(
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20)
+            shape: BoxShape.circle, // Change shape to circle
           ),
-          width: 100,
-          child: 
-          profileUrl.isEmpty?
-          Image.asset(
-            'assets/imgs/user.png',
-          ):Image.network(
-            profileUrl,
+          padding: EdgeInsets.all(6),
+          // width: 100,
+          height: 100, // Ensure height is also set to make it a circle
+          child: ClipOval(
+            child: profileUrl.isEmpty
+                ? Image.asset(
+                    'assets/imgs/user.png',
+                    fit: BoxFit.cover, // Ensures the image covers the circle
+                  )
+                : Image.network(
+                    profileUrl,
+                    fit: BoxFit.cover, // Ensures the image covers the circle
+                  ),
           ),
         ),
+        SizedBox(width: 12)
       ],
     );
   }

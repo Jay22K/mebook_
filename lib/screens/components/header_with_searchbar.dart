@@ -95,7 +95,6 @@ class HeaderWithSearchBar extends StatelessWidget {
                       IconButton(
                         onPressed: () {
                           //TODO: change route
-
                           final searchString = searchController.text;
                           if (searchString.isNotEmpty) {
                             Navigator.push(
