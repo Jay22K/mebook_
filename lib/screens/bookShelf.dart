@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_pdfview/flutter_pdfview.dart';
 
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:path_provider/path_provider.dart';
 
 
 import '../constants.dart';
@@ -29,22 +30,46 @@ class _BookShelfScreenState extends State<BookShelfScreen> {
     getFilesList();
   }
 
+  // Future<void> getFilesList() async {
+  //   // Directory directory = Directory('/storage/emulated/0/Android/data/com.jayesh.mebook/files/data/user/0/com.jayesh.mebook/files/');
+
+  //   Directory? directory = await getExternalStorageDirectory();
+  //   log(directory.toString());
+  //   List<FileSystemEntity> fileList = directory!.listSync();
+
+  //   List<File> tempFiles = [];
+  //   for (FileSystemEntity file in fileList) {
+  //     if (file is File) {
+  //       tempFiles.add(file);
+  //     }
+  //   }
+
+  //   setState(() {
+  //     files = tempFiles;
+  //   });
+  // }
+
   Future<void> getFilesList() async {
-    Directory directory = Directory(
-        '/storage/emulated/0/Android/data/com.example.mebook/files/data/user/0/com.example.mebook/files/');
-    List<FileSystemEntity> fileList = directory.listSync();
+  // Get the application documents directory
+  Directory? directory = await getExternalStorageDirectory();
+  String dirPath = directory!.path + "/data/user/0/com.jayesh.mebook/files/";
 
-    List<File> tempFiles = [];
-    for (FileSystemEntity file in fileList) {
-      if (file is File) {
-        tempFiles.add(file);
-      }
+  // List files in the specified directory
+
+  log(dirPath);
+  Directory targetDirectory = Directory(dirPath);
+  List<FileSystemEntity> fileList = targetDirectory.listSync();
+
+  List<File> tempFiles = [];
+  for (FileSystemEntity file in fileList) {
+    if (file is File) {
+      tempFiles.add(file);
     }
-
-    setState(() {
-      files = tempFiles;
-    });
   }
+  setState(() {
+    files = tempFiles;
+  });
+}
 
   IconData getFileIcon(String path) {
     IconData iconData;
