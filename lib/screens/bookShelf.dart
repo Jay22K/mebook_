@@ -8,9 +8,7 @@ import 'package:flutter_pdfview/flutter_pdfview.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:path_provider/path_provider.dart';
 
-
 import '../constants.dart';
-
 
 class BookShelfScreen extends StatefulWidget {
   const BookShelfScreen({super.key});
@@ -50,26 +48,26 @@ class _BookShelfScreenState extends State<BookShelfScreen> {
   // }
 
   Future<void> getFilesList() async {
-  // Get the application documents directory
-  Directory? directory = await getExternalStorageDirectory();
-  String dirPath = directory!.path + "/data/user/0/com.jayesh.mebook/files/";
+    // Get the application documents directory
+    Directory? directory = await getExternalStorageDirectory();
+    String dirPath = directory!.path + "/data/user/0/com.jayesh.mebook/files/";
 
-  // List files in the specified directory
+    // List files in the specified directory
 
-  log(dirPath);
-  Directory targetDirectory = Directory(dirPath);
-  List<FileSystemEntity> fileList = targetDirectory.listSync();
+    log(dirPath);
+    Directory targetDirectory = Directory(dirPath);
+    List<FileSystemEntity> fileList = targetDirectory.listSync();
 
-  List<File> tempFiles = [];
-  for (FileSystemEntity file in fileList) {
-    if (file is File) {
-      tempFiles.add(file);
+    List<File> tempFiles = [];
+    for (FileSystemEntity file in fileList) {
+      if (file is File) {
+        tempFiles.add(file);
+      }
     }
+    setState(() {
+      files = tempFiles;
+    });
   }
-  setState(() {
-    files = tempFiles;
-  });
-}
 
   IconData getFileIcon(String path) {
     IconData iconData;
@@ -95,85 +93,92 @@ class _BookShelfScreenState extends State<BookShelfScreen> {
         elevation: 0,
         backgroundColor: kPrimaryColor,
         title: Text('Downloaded Books'),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.download),
+          )
+        ],
       ),
       body: files.isEmpty
           ? Center(
               child: Text('No files found'),
             )
           : StaggeredGridView.countBuilder(
-            padding: EdgeInsets.all(8.0),
-            crossAxisCount: 2, // Number of columns
-            physics: BouncingScrollPhysics(),
-            itemCount: files.length,
-            // reverse: true,
-            staggeredTileBuilder: (int index) =>
-                StaggeredTile.fit(1), // Tile size, here 1 means full width
-            mainAxisSpacing: 8.0, // Spacing between rows
-            crossAxisSpacing: 8.0, // Spacing between columns
-            itemBuilder: (BuildContext context, int index) {
-              IconData iconData = getFileIcon(files[index].path);
+              padding: EdgeInsets.all(8.0),
+              crossAxisCount: 2, // Number of columns
+              physics: BouncingScrollPhysics(),
+              itemCount: files.length,
+              // reverse: true,
+              staggeredTileBuilder: (int index) =>
+                  StaggeredTile.fit(1), // Tile size, here 1 means full width
+              mainAxisSpacing: 8.0, // Spacing between rows
+              crossAxisSpacing: 8.0, // Spacing between columns
+              itemBuilder: (BuildContext context, int index) {
+                IconData iconData = getFileIcon(files[index].path);
 
-              log(files[index].path); // this is path of pdf
-              return Card(
-                elevation: 4,
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: InkWell(
-                    onTap: () {
-                      // Handle file tap action here
-                      log(files[index].path); // this is path of pdf
-                    },
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        // Icon(iconData, size: 50),
+                log(files[index].path); // this is path of pdf
+                return Card(
+                  elevation: 4,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: InkWell(
+                      onTap: () {
+                        // Handle file tap action here
+                        log(files[index].path); // this is path of pdf
+                      },
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          // Icon(iconData, size: 50),
 
-                        Container(
-                          height: 185,
-                          child: Center(
-                            child:
-                                // _isLoading
-                                //     ? CircularProgressIndicator()
-                                //     :
-                                iconData == Icons.picture_as_pdf
-                                    ? PDFView(
-                                        filePath:
-                                            files[index].path.toString(),
-                                        enableSwipe:
-                                            false, // Enables swiping to change pages
-                                        autoSpacing:
-                                            true, // Adjust spacing automatically
-                                        pageFling:
-                                            true, // Allows flinging to change pages
-                                        pageSnap:
-                                            true, // Snaps to the nearest page
-                                        defaultPage:
-                                            0, // Set the default page index
-                                        fitPolicy: FitPolicy
-                                            .WIDTH, // Set the fit policy
-                                      )
-                                    : Icon(iconData, size: 50),
-                            // add pdf Widget show pdf 1st page...
+                          Container(
+                            height: 185,
+                            child: Center(
+                              child:
+                                  // _isLoading
+                                  //     ? CircularProgressIndicator()
+                                  //     :
+                                  
+                                  iconData == Icons.picture_as_pdf
+                                      ? PDFView(
+                                          filePath:
+                                              files[index].path.toString(),
+                                          enableSwipe:
+                                              false, // Enables swiping to change pages
+                                          autoSpacing:
+                                              true, // Adjust spacing automatically
+                                          pageFling:
+                                              true, // Allows flinging to change pages
+                                          pageSnap:
+                                              true, // Snaps to the nearest page
+                                          defaultPage:
+                                              0, // Set the default page index
+                                          fitPolicy: FitPolicy
+                                              .WIDTH, // Set the fit policy
+                                        )
+                                      : Icon(iconData, size: 50),
+                              // add pdf Widget show pdf 1st page...
+                            ),
                           ),
-                        ),
-                        SizedBox(height: 8),
-                        Text(
-                          files[index].path.split('/').last,
-                          textAlign: TextAlign.center,
-                          style: TextStyle(fontSize: 12),
-                          // overflow: TextOverflow.ellipsis,
-                          // maxLines: 3,
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                      ],
+                          SizedBox(height: 8),
+                          Text(
+                            files[index].path.split('/').last,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(fontSize: 12),
+                            // overflow: TextOverflow.ellipsis,
+                            // maxLines: 3,
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
-                ),
-              );
-            },
-          ),
+                );
+              },
+            ),
     );
   }
 }

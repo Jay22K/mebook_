@@ -46,7 +46,7 @@ class BookAdaptor extends StatelessWidget {
           elevation: 4,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
-          ),
+          ), 
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -64,6 +64,8 @@ class BookAdaptor extends StatelessWidget {
                         borderRadius: BorderRadius.circular(7),
                       ),
                     ),
+
+                    
                     Positioned(
                       top: 0,
                       left: 0,
