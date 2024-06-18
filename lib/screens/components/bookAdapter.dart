@@ -41,11 +41,11 @@ class BookAdaptor extends StatelessWidget {
         );
       },
       child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Container(
-          decoration: BoxDecoration(
-            color: kBackgroundColor,
-            borderRadius: BorderRadius.circular(10),
+        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 3),
+        child: Card(
+          elevation: 4,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
           ),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
