@@ -16,6 +16,7 @@ import '../services/bookModel.dart';
 import '../services/book_json_parser.dart';
 import '../services/json_parser.dart';
 
+import '../util/downloadRequest.dart';
 import '../util/sesstion_settings.dart';
 import 'components/bookDetails.dart';
 import 'components/toast.dart';
@@ -142,27 +143,9 @@ void handleFABTap(BuildContext context, String? downloadUrl) {
 
   ToastShow(msg: 'Book is Downloading').showToast(context);
 
-  FileDownloader.downloadFile(
-    url: downloadUrl,
-    downloadDestination: DownloadDestinations.appFiles,
-    notificationType: NotificationType.all,
-    
-    onProgress: (name, progress) {
-      log("file name : " + name.toString());
-      log('Progress: $progress%');
-    },
-    onDownloadCompleted: (path) {
-      log("downloaded to : " + path.toString());
-      ToastShow(msg: 'Downloading Successful..!').showToast(context);
-    },
-    onDownloadError: (error) {
-      log('Download error: $error');
-      ToastShow(msg: 'Downloading is canceled or failed due to network issues')
-          .showToast(context);
-    },
-  ).then((file) {
-    debugPrint('file path: ${file?.path}');
-  });
+  // Call the FileDownloaderService to download the file
+  FileDownloaderService fileDownloaderService = FileDownloaderService();
+  fileDownloaderService.requestDownload(modifiedUrl, "book_download", context);
 
   log("book URL : " + downloadUrl);
 }

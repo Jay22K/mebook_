@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_file_downloader/flutter_file_downloader.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:mebook/screens/downloadManager.dart';
 
 import '../constants.dart';
 import '../util/router.dart';
@@ -32,7 +33,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("sss"),
+            TextButton(onPressed: () {
+              MyRouter.pushPage(context, downloadManager());
+            }, child: Text("download manager")),
           ],
         ),
       ),
