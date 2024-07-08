@@ -64,13 +64,15 @@ class BookWidget extends StatelessWidget {
                         fit: BoxFit.fill,
                       ),
                       borderRadius: BorderRadius.circular(7),
+                     
                     ),
                   ),
                   Positioned(
                     top: 0,
                     left: 0,
                     child: Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 3),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 6, vertical: 3),
                       decoration: const BoxDecoration(
                         color: Colors.black,
                         borderRadius: BorderRadius.only(

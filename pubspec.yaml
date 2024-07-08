@@ -62,6 +62,9 @@ dependencies:
   social_login_buttons: ^1.0.7
   video_player: ^2.7.2
   cloud_firestore: ^4.14.0
+  al_downloader: ^1.8.4
+  babstrap_settings_screen: ^0.1.6
+
 
   
 
