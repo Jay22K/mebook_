@@ -4,17 +4,15 @@ import 'package:babstrap_settings_screen/babstrap_settings_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_file_downloader/flutter_file_downloader.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:mebook/screens/downloadManager.dart';
+
 import 'package:mebook/screens/start.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+
 
 import '../constants.dart';
 import '../util/router.dart';
-import '../util/sesstion_settings.dart';
+
 import '../util/storeageService.dart';
-import 'home.dart';
+
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({Key? key}) : super(key: key);
@@ -66,6 +64,26 @@ class _SettingsScreenState extends State<SettingsScreen> {
     // Clear all SharedPreferences
     //navigate to the login screen or show a message
     MyRouter.pushPageReplacement(context, Start());
+  }
+
+  void _deleteAccount(BuildContext context) async {
+    try {
+      User? user = FirebaseAuth.instance.currentUser;
+      if (user != null) {
+        await user.delete();
+        Navigator.of(context).pop(); // Close the dialog
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text("Account deleted successfully.")),
+        );
+        // Navigate to a different screen, such as the login screen
+        Navigator.of(context).pushReplacementNamed('/login');
+      }
+    } catch (e) {
+      Navigator.of(context).pop(); // Close the dialog
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text("Failed to delete account. Please try again.")),
+      );
+    }
   }
 
   @override
@@ -173,7 +191,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   title: "Change email",
                 ),
                 SettingsItem(
-                  onTap: () {},
+                  onTap: () =>  _deleteAccount(context),
                   icons: CupertinoIcons.delete_solid,
                   title: "Delete account",
                   titleStyle: TextStyle(
