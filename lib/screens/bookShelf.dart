@@ -148,7 +148,7 @@ class _BookShelfScreenState extends State<BookShelfScreen> {
                                           filePath:
                                               files[index].path.toString(),
                                           enableSwipe:
-                                              false, // Enables swiping to change pages
+                                              true, // Enables swiping to change pages
                                           autoSpacing:
                                               true, // Adjust spacing automatically
                                           pageFling:
