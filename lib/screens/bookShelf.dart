@@ -90,13 +90,16 @@ class _BookShelfScreenState extends State<BookShelfScreen> {
     return Scaffold(
       backgroundColor: kBackgroundColor,
       appBar: AppBar(
+        // centerTitle: true,
+        backgroundColor: Colors.transparent,
         elevation: 0,
-        backgroundColor: kPrimaryColor,
-        title: Text('Downloaded Books'),
+        // backgroundColor: kPrimaryColor,
+        title: Text('Downloaded Books',style: TextStyle(color: kSecondColor, fontWeight: FontWeight.bold),),
         actions: [
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.download),
+            icon: Icon(Icons.download, color: kSecondColor,),
+            
           )
         ],
       ),
