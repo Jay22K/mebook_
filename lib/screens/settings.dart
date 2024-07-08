@@ -113,7 +113,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white.withOpacity(.94),
+   
       appBar: AppBar(
         title: Text(
           "Settings",
@@ -184,7 +184,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     backgroundColor: Colors.purple,
                   ),
                   title: 'About',
-                  subtitle: "Learn more about Ziar'App",
+                  subtitle: "Learn more about MeBook",
                 ),
               ],
             ),

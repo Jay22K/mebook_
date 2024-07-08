@@ -27,7 +27,7 @@ class _ChipsFilterState extends State<ChipsFilter> {
             label: Text(category),
             labelStyle: TextStyle(color: Color(0xff9d9686), fontSize: 17),
             selectedColor: Color(0xffe4e0cf),
-            backgroundColor: kBackgroundColor,
+            // backgroundColor: kBackgroundColor,
             selected: _selectedCategory == category,
             onSelected: (selected) {
               setState(() {
