@@ -7,12 +7,12 @@ import 'package:flutter/material.dart';
 
 import 'package:mebook/screens/start.dart';
 
-
 import '../constants.dart';
 import '../util/router.dart';
 
 import '../util/storeageService.dart';
-
+import 'components/customAlertDialog.dart';
+import 'components/snackBar.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({Key? key}) : super(key: key);
@@ -25,9 +25,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
   // bool enabled = FileDownloader().isLogEnabled;
   // final SessionSettings settings = SessionSettings();
   // int _selectedIndex = 2;
-    final FirebaseAuth _auth = FirebaseAuth.instance;
-
-
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+ final storageService = StorageService();
   String username = '';
   String userphotoURL = '';
 
@@ -56,40 +55,65 @@ class _SettingsScreenState extends State<SettingsScreen> {
     log(userphotoURL);
   }
 
-
   void _signOut(BuildContext context) async {
     await _auth.signOut();
-       final storageService = StorageService();
-       storageService.clear();
+    final storageService = StorageService();
+
     // Clear all SharedPreferences
     //navigate to the login screen or show a message
-    MyRouter.pushPageReplacement(context, Start());
+
+    CustomAlertDialog(
+      title: "Confirm Logout",
+      content: "Are you sure you want to Logout your account?",
+      cancelText: "Cancel",
+      deleteText: "Logout",
+      onDelete: () {
+        // Handle delete action
+        storageService.clear();
+        Navigator.of(context).pop();
+        MyRouter.pushPageReplacement(context, Start());
+      },
+    ).show(context);
   }
 
-  void _deleteAccount(BuildContext context) async {
+  void _deleteAccountConfirm(BuildContext context) async {
+    CustomAlertDialog(
+      title: "Confirm Deletion",
+      content:
+          "Are you sure you want to delete your account? This action cannot be undone",
+      cancelText: "Cancel",
+      deleteText: "Delete",
+      onDelete: () {
+        // Handle delete action
+
+        Accountdelete(context);
+  
+      },
+    ).show(context);
+  }
+
+  void Accountdelete(BuildContext context) async {
     try {
       User? user = FirebaseAuth.instance.currentUser;
       if (user != null) {
         await user.delete();
-        Navigator.of(context).pop(); // Close the dialog
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text("Account deleted successfully.")),
-        );
-        // Navigate to a different screen, such as the login screen
-        Navigator.of(context).pushReplacementNamed('/login');
+        storageService.clear();
+        Navigator.of(context).pop(); // Close the dialog if it's open
+        showCustomSnackBar(context, "Account deleted successfully.");
+        // Example: Navigate to a different screen after deleting account
+        MyRouter.pushPageReplacement(context, Start());
       }
     } catch (e) {
-      Navigator.of(context).pop(); // Close the dialog
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text("Failed to delete account. Please try again.")),
-      );
+      // Navigator.of(context).pop(); // Close the dialog if it's open
+      showCustomSnackBar(
+          context, "Failed to delete account. Please try again.");
     }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white.withOpacity(.94),
+   
       appBar: AppBar(
         title: Text(
           "Settings",
@@ -104,23 +128,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
         child: ListView(
           children: [
             // user card
-            BigUserCard(
-              backgroundColor: kSecondColor,
+            SmallUserCard(
+              cardColor: kSecondColor,
               userName: username,
               userProfilePic: NetworkImage(userphotoURL),
-              cardActionWidget: SettingsItem(
-                icons: Icons.edit,
-                iconStyle: IconStyle(
-                  withBackground: true,
-                  borderRadius: 50,
-                  backgroundColor: Colors.yellow[600],
-                ),
-                title: "Modify",
-                subtitle: "Tap to change your data",
-                onTap: () {
-                  print("OK");
-                },
-              ),
+              onTap: () {},
             ),
             SettingsGroup(
               items: [
@@ -172,7 +184,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     backgroundColor: Colors.purple,
                   ),
                   title: 'About',
-                  subtitle: "Learn more about Ziar'App",
+                  subtitle: "Learn more about MeBook",
                 ),
               ],
             ),
@@ -191,7 +203,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   title: "Change email",
                 ),
                 SettingsItem(
-                  onTap: () =>  _deleteAccount(context),
+                  onTap: () => _deleteAccountConfirm(context),
                   icons: CupertinoIcons.delete_solid,
                   title: "Delete account",
                   titleStyle: TextStyle(
