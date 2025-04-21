@@ -199,6 +199,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         ),
                         textAlign: TextAlign.center,
                       ),
+
                       const SizedBox(height: 16.0),
                       _isLoading
                           ? const CircularProgressIndicator()

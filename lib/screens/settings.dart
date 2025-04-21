@@ -4,7 +4,7 @@ import 'package:babstrap_settings_screen/babstrap_settings_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
+import 'package:mebook/screens/privacy.dart';
 import 'package:mebook/screens/start.dart';
 
 import '../constants.dart';
@@ -26,7 +26,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   // final SessionSettings settings = SessionSettings();
   // int _selectedIndex = 2;
   final FirebaseAuth _auth = FirebaseAuth.instance;
- final storageService = StorageService();
+  final storageService = StorageService();
   String username = '';
   String userphotoURL = '';
 
@@ -87,7 +87,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
         // Handle delete action
 
         Accountdelete(context);
-  
       },
     ).show(context);
   }
@@ -113,7 +112,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-   
       appBar: AppBar(
         title: Text(
           "Settings",
@@ -148,15 +146,17 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   subtitleMaxLine: 1,
                 ),
                 SettingsItem(
-                  onTap: () {},
-                  icons: Icons.fingerprint,
+                  onTap: () {
+                    MyRouter.pushPage(context, const Privacy());
+                  },
+                  icons: Icons.privacy_tip_outlined,
                   iconStyle: IconStyle(
                     iconsColor: Colors.white,
                     withBackground: true,
-                    backgroundColor: Colors.red,
+                    backgroundColor: Colors.redAccent,
                   ),
-                  title: 'Privacy',
-                  subtitle: "Lock Ziar'App to improve your privacy",
+                  title: 'Privacy Settings',
+                  subtitle: 'Manage app permissions and security',
                 ),
                 SettingsItem(
                   onTap: () {},

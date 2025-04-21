@@ -4,8 +4,6 @@ import 'package:hive/hive.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:mebook/screens/auths_screen.dart';
 import 'package:mebook/util/storeageService.dart';
-
-
 import 'package:path_provider/path_provider.dart' as path_provider;
 import 'package:mebook/constants.dart';
 import 'package:path_provider/path_provider.dart';
